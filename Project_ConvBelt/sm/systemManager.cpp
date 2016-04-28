@@ -27,74 +27,69 @@ SystemManager :: SystemManager() {
 	// SetMode - Doku - Abbildung 3.1
 	tab[0][0] = new TableEntry ("idle","idleLocalMode","keyAIsPressed",0,myAction00,myConditionTrue);
 	tab[0][1] = new TableEntry ("idle","idleChainMode","keyBIsPressed",0,myAction01,myConditionTrue);
-	
 	// LocalMode - Doku - Abbidlung 3.2
-	tab[1][0] = new TableEntry ("idleLocalMode","idleLocalMode","keyLeftIsPressed",0,myAction10,myConditionTrue);
-	tab[1][1] = new TableEntry ("idleLocalMode","idleLocalMode","keyRightIsPressed",0,myAction11,myConditionTrue);
-	tab[1][2] = new TableEntry ("idleLocalMode","idleLocalMode","keyDecIsPressed",0,myAction12,myConditionTrue);
-	tab[1][3] = new TableEntry ("idleLocalMode","idleLocalMode","keyIncIsPressed",0,myAction13,myConditionTrue);
-	tab[1][4] = new TableEntry ("idleLocalMode","runLocalProfile","keyStartIsPressed",0,myAction14,myConditionTrue);
-	tab[1][5] = new TableEntry ("runLocalProfile","idleLocalMode","Timer1",8000,myAction15,myConditionTrue);
-	tab[1][6] = new TableEntry ("idleLocalMode","idleChainMode","keyBIsPressed",0,myAction16,myConditionTrue);
-	
+	tab[0][2] = new TableEntry ("idleLocalMode","idleLocalMode","keyLeftIsPressed",0,myAction10,myConditionTrue);
+	tab[0][3] = new TableEntry ("idleLocalMode","idleLocalMode","keyRightIsPressed",0,myAction11,myConditionTrue);
+	tab[0][4] = new TableEntry ("idleLocalMode","idleLocalMode","keyDecIsPressed",0,myAction12,myConditionTrue);
+	tab[0][5] = new TableEntry ("idleLocalMode","idleLocalMode","keyIncIsPressed",0,myAction13,myConditionTrue);
+	tab[0][6] = new TableEntry ("idleLocalMode","runLocalProfile","keyStartIsPressed",0,myAction14,myConditionTrue);
+	tab[0][7] = new TableEntry ("runLocalProfile","idleLocalMode","Timer1",8000,myAction15,myConditionTrue);
+	tab[0][8] = new TableEntry ("idleLocalMode","idleChainMode","keyBIsPressed",0,myAction16,myConditionTrue);
 	// ChainMode - Doku - Abbidlung 3.3
-	tab[2][0] = new TableEntry ("idleChainMode","slowMovement1","receiveRequest",0,myAction20,myConditionTrue);
-	tab[2][1] = new TableEntry ("slowMovement1","runChainProfile","Timer2",1000,myAction21,myConditionTrue);
-	tab[2][2] = new TableEntry ("runChainProfile","waitForReady","Timer2",8000,myAction22,myConditionTrue);
-	tab[2][3] = new TableEntry ("waitForReady","waitForReady","receiveWait",0,myAction23,myConditionTrue);
-	tab[2][4] = new TableEntry ("waitForReady","slowMovement2","receiveReady",0,myAction24,myConditionTrue);
-	tab[2][5] = new TableEntry ("slowMovement2","checkFormerRequest","receiveRelease",0,myAction25,myConditionTrue);
-	tab[2][6] = new TableEntry ("checkFormerRequest","slowMovement1","Timer2",2000,myAction26,myConditionFormerReqTrue);
-	tab[2][7] = new TableEntry ("checkFormerRequest","idleChainMode","Timer2",2000,myAction27,myConditionFormerReqFalse);
-	tab[2][8] = new TableEntry ("idleChainMode","idleLocalMode","keyAIsPressed",0,myAction28,myConditionTrue);
+	tab[0][9] = new TableEntry ("idleChainMode","slowMovement1","receiveRequest",0,myAction20,myConditionTrue);
+	tab[0][10] = new TableEntry ("slowMovement1","runChainProfile","Timer1",1000,myAction21,myConditionTrue);
+	tab[0][11] = new TableEntry ("runChainProfile","waitForReady","Timer1",8000,myAction22,myConditionTrue);
+	tab[0][12] = new TableEntry ("waitForReady","waitForReady","receiveWait",0,myAction23,myConditionTrue);
+	tab[0][13] = new TableEntry ("waitForReady","slowMovement2","receiveReady",0,myAction24,myConditionTrue);
+	tab[0][14] = new TableEntry ("slowMovement2","checkFormerRequest","receiveRelease",0,myAction25,myConditionTrue);
+	tab[0][15] = new TableEntry ("checkFormerRequest","slowMovement1","Timer1",2000,myAction26,myConditionFormerReqTrue);
+	tab[0][16] = new TableEntry ("checkFormerRequest","idleChainMode","Timer1",2000,myAction27,myConditionFormerReqFalse);
+	tab[0][17] = new TableEntry ("idleChainMode","idleLocalMode","keyAIsPressed",0,myAction28,myConditionTrue);
 	// if a request arrives during the chain mode operation (Abbildung 3.3), the request should be saved and a wait msg should
 	// be sent
-	tab[2][9] = new TableEntry ("slowMovement1","slowMovement1","receiveRequest",0,myAction29,myConditionTrue);
-	tab[2][10] = new TableEntry ("waitForReady","waitForReady","receiveRequest",0,myAction29,myConditionTrue);
-	tab[2][11] = new TableEntry ("waitForReady","waitForReady","receiveRequest",0,myAction29,myConditionTrue);
-	tab[2][12] = new TableEntry ("slowMovement2","slowMovement2","receiveRequest",0,myAction29,myConditionTrue);
-	tab[2][13] = new TableEntry ("checkFormerRequest","checkFormerRequest","receiveRequest",0,myAction29,myConditionTrue);
+	tab[0][18] = new TableEntry ("slowMovement1","slowMovement1","receiveRequest",0,myAction29,myConditionTrue);
+	tab[0][19] = new TableEntry ("waitForReady","waitForReady","receiveRequest",0,myAction29,myConditionTrue);
+	tab[0][20] = new TableEntry ("waitForReady","waitForReady","receiveRequest",0,myAction29,myConditionTrue);
+	tab[0][21] = new TableEntry ("slowMovement2","slowMovement2","receiveRequest",0,myAction29,myConditionTrue);
+	tab[0][22] = new TableEntry ("checkFormerRequest","checkFormerRequest","receiveRequest",0,myAction29,myConditionTrue);
 	
+	//-------------------------------------------------------------------------------------------------------------------------
 	// Ablauf-Steuerung - Doku - Abbildung 3.4
-	tab[3][0] = new TableEntry ("idleFlowControl","accelerate","startChainProfile",0,myAction30,myConditionTrue);
-	tab[3][1] = new TableEntry ("idleFlowControl","accelerate","startLocalProfile",0,myAction31,myConditionTrue);
-	tab[3][2] = new TableEntry ("idleFlowControl","runSlowMovement2","startSlowMovement2",0,myAction32,myConditionTrue);
-	tab[3][3] = new TableEntry ("idleFlowControl","runSlowMovement1","startSlowMovement1",0,myAction33,myConditionTrue);
-	tab[3][4] = new TableEntry ("runSlowMovement1","idleFlowControl","Timer3",1000,myAction34,myConditionTrue);
-	tab[3][5] = new TableEntry ("runSlowMovement2","idleFlowControl","stop",0,myAction35,myConditionTrue);
+	tab[1][0] = new TableEntry ("idleFlowControl","accelerate","startChainProfile",0,myAction30,myConditionTrue);
+	tab[1][1] = new TableEntry ("idleFlowControl","accelerate","startLocalProfile",0,myAction31,myConditionTrue);
+	tab[1][2] = new TableEntry ("idleFlowControl","runSlowMovement2","startSlowMovement2",0,myAction32,myConditionTrue);
+	tab[1][3] = new TableEntry ("idleFlowControl","runSlowMovement1","startSlowMovement1",0,myAction33,myConditionTrue);
+	tab[1][4] = new TableEntry ("runSlowMovement1","idleFlowControl","Timer2",1000,myAction34,myConditionTrue);
+	tab[1][5] = new TableEntry ("runSlowMovement2","idleFlowControl","stop",0,myAction35,myConditionTrue);
 	
 	// runChainProfile - Doku - Abbildung 3.5
-	tab[3][6] = new TableEntry ("accelerate","accelerate","Timer3",50,myAction36,myConditionTrue);
-	tab[3][7] = new TableEntry ("accelerate","constantVelocity","Timer3",1000,myAction37,myConditionTrue);
-	tab[3][8] = new TableEntry ("constantVelocity","decelerate","Timer3",6000,myAction38,myConditionTrue);
-	tab[3][9] = new TableEntry ("decelerate","decelerate","Timer3",50,myAction39,myConditionTrue);
-	tab[3][10] = new TableEntry ("decelerate","idleFlowControl","Timer3",6000,myAction40,myConditionTrue);
+	tab[1][6] = new TableEntry ("accelerate","accelerate","Timer2",50,myAction36,myConditionTrue);
+	tab[1][7] = new TableEntry ("accelerate","constantVelocity","Timer2",1000,myAction37,myConditionTrue);
+	tab[1][8] = new TableEntry ("constantVelocity","decelerate","Timer2",6000,myAction38,myConditionTrue);
+	tab[1][9] = new TableEntry ("decelerate","decelerate","Timer2",50,myAction39,myConditionTrue);
+	tab[1][10] = new TableEntry ("decelerate","idleFlowControl","Timer2",6000,myAction40,myConditionTrue);
 
-	tab[4][0] = new TableEntry ("checkKey","checkKey","Timer4",100,myAction41,myConditionTrue);
+	//-------------------------------------------------------------------------------------------------------------------------
+	tab[2][0] = new TableEntry ("checkKey","checkKey","Timer3",100,myAction41,myConditionTrue);
  
 	// Init timer names for all diagrams
 	timerNames[0]= "Timer1";
 	timerNames[1]= "Timer2";
-	timerNames[3]= "Timer3";
-	timerNames[4]= "Timer4";
+	timerNames[2]= "Timer3";
 
 	// Initialize line numbers for all diagrams
-	lines[0] = 2;
-	lines[1] = 7;
-	lines[2] = 14;
-	lines[3] = 10;
-	lines[4] = 1;
+	lines[0] = 23;
+	lines[1] = 11;
+	lines[2] = 1;
 
 
 	// Initialize first state for all diagrams
 	actualState[0] = "idle";
-	actualState[1] = "idleLocalMode";
-	actualState[2] = "idleChainMode";
-	actualState[3] = "idleFlowControl";
-	actualState[4] = "checkKey";
+	actualState[1] = "idleFlowControl";
+	actualState[2] = "checkKey";
 	
 	// Set the actual number of diagrams
-	diagrams = 5;
+	diagrams = 3;
 	
 	// Create instance of my Keyboard
 	myKeyboard = new Keyboard;
@@ -103,7 +98,7 @@ SystemManager :: SystemManager() {
 	myStateMachine = new StateMachine;
 
 	// Start timer for each diagram which needs one in the first state!
-	myStateMachine->diaTimerTable[4]->startTimer(tab[4][0]->eventTime);
+	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
 	//myStateMachine->diaTimerTable[1]->startTimer(tab[1][0]->eventTime);
 	
 	//Display speed

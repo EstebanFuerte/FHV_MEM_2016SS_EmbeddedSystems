@@ -18,6 +18,7 @@ bool formerRequest;			// to save request during operation mode
 
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
+TCPServer * myTCPServer;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)

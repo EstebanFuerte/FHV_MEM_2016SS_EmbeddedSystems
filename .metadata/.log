@@ -330,3 +330,23 @@ org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY org.eclipse.cdt.core 1 0 2016-04-28 07:59:59.859
 !MESSAGE Indexed 'ConvBelt' (17 sources, 224 headers) in 6,38 sec: 10.765 declarations; 14.413 references; 8 unresolved inclusions; 3 syntax errors; 176 unresolved names (0,69 %)
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 08:07:53.000
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-04-28 08:08:57.940
+!MESSAGE Indexed 'Project_ConvBelt' (0 sources, 0 headers) in 0,00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00 %)
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-04-28 08:38:44.689
+!MESSAGE Target Exception: Vector 0xE : Page Fault on VxWorks6x_90.0.0.50 in Kernel Task tMain 
+at pc=0xFC103B in SystemManager::SystemManager()
+at C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/systemManager.cpp:109
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 08:41:09.376
+!MESSAGE WRDFWModuleService - skip download for C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\Project_ConvBelt\SIMNTdiab\Project_ConvBelt\Debug\Project_ConvBelt.out, file not modified.
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 08:41:32.767
+!MESSAGE WRDFWModuleService - skip download for C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\Project_ConvBelt\SIMNTdiab\Project_ConvBelt\Debug\Project_ConvBelt.out, file not modified.
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 08:50:14.535
+!MESSAGE TM shutdown completed.

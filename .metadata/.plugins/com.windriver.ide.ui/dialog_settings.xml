@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WRProjectWizard">
+		<item value="Boot Loader / BSP Project" key="WRGenericProjectWizardBuildTypePage.STORE_SELECTED_BUILD_TYPE"/>
+		<item value="Compressed (default)" key="WRSetupBSPPage.SELECTED_STYLE"/>
+		<item value="vxworks-6.9" key="WRGenericProjectWizardBuildTypePage.STORE_SELECTED_PLATFORM"/>
+		<item value="vxworks-6.9" key="WRTargetOSWizardPage.STORE_SELECTED_PLATFORM"/>
+		<item value="ELF (default)" key="WRSetupBSPPage.SELECTED_FORMAT"/>
+		<item value="diab" key="AbstractImageSetupPage.SELECTED_TC"/>
+		<item value="idp3100_efi" key="AbstractImageSetupPage.SELECTED_BSP"/>
+		<list key="WRWizardNewProjectCreationPage.STORE_PROJECT_LOCATION">
+			<item value="C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\Project_ConvBelt"/>
+			<item value="C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\ConvBelt"/>
+		</list>
+	</section>
+</section>

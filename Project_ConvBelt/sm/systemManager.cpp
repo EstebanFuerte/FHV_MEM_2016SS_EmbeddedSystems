@@ -10,8 +10,9 @@ extern "C"{
 }
 
 char textBuffer[88];
-int speed,tempSpeed,step;	// motorspeed calculation
-int zeroSpeed=2490;
+int speed,step;	// motorspeed calculation
+float tempSpeed;
+float zeroSpeed=2490,0;
 bool direction;				// rotation of the motor
 bool formerRequest;			// to save request during operation mode
 
@@ -294,8 +295,8 @@ void SystemManager :: action32(){	// Ablauf - from idleFlowControl to runSlowMov
 	sprintf (textBuffer,"State: runSlowMovement2          "); writeToDisplay (17, 20, textBuffer);
 	sprintf (textBuffer,"Substate: -                      "); writeToDisplay (19, 20, textBuffer);
 	
-	int value = zeroSpeed+speed*zeroSpeed/2200;
-	writeAnalog (0, value);
+	float value = zeroSpeed+100*zeroSpeed/2200;
+	writeAnalog (0, (int)value);
 	motorOn();
 	
 	return;
@@ -305,8 +306,8 @@ void SystemManager :: action33(){	// Ablauf - from idleFlowControl to runSlowMov
 	sprintf (textBuffer,"State: runSlowMovement1          "); writeToDisplay (17, 20, textBuffer);
 	sprintf (textBuffer,"Substate: -                      "); writeToDisplay (19, 20, textBuffer);
 	
-	int value = zeroSpeed+speed*zeroSpeed/2200;
-	writeAnalog (0, value);
+	float value = zeroSpeed+100*zeroSpeed/2200;
+	writeAnalog (0, (int)value);
 	motorOn();
 	
 	return;
@@ -333,10 +334,11 @@ void SystemManager :: action35(){	// Ablauf - from runSlowMovement2 to idleFlowC
 void SystemManager :: action36(){	// Ablauf - accelerate to accelerate
 	sprintf (textBuffer,"Substate-Ablauf: accelerate      "); writeToDisplay (19, 20, textBuffer);
 	
-	tempSpeed = tempSpeed+step;
-	int value;
+	tempSpeed = tempSpeed+(float)step;
+	float value;
 	if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
+	writeAnalog (0, (int)value);
 	motorOn();
 	
 	return;
@@ -355,10 +357,11 @@ void SystemManager :: action38(){	// Ablauf - from constantVelocity to decelerat
 void SystemManager :: action39(){	// Ablauf - from constantVelocity to decelerate
 	sprintf (textBuffer,"Substate-Ablauf: deccelerate     "); writeToDisplay (19, 20, textBuffer);
 	
-	tempSpeed = tempSpeed-step;
-	int value;
+	tempSpeed = tempSpeed-(float)step;
+	float value;
 	if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
+	writeAnalog (0, (int)value);
 	motorOn();
 	
 	return;

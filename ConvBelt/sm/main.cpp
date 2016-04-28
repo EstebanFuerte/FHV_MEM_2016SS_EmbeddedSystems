@@ -1,0 +1,205 @@
+
+#include <taskLib.h>
+#include <stdio.h>
+#include <intLib.h>
+#include <sysLib.h>
+#include <stdLib.h>
+#include "ifLib.h"
+#include "systemManager.h"
+#include "stateMachine.h"
+
+extern "C"{
+	#include "../labFiles/hwFunc.h"
+}
+
+SystemManager * mySystemManager;
+StateMachine * myStateMachine;
+
+void setLocalIp();
+
+int main (void) {
+	
+	//init HW
+	initHardware(0);
+	writeToDisplay (3,20, "Hello Stefan");
+
+	// Set tick to 5 ms. This is the time resolution!
+	sysClkRateSet(200);
+	
+	// Set local IP address according to MAC table
+	setLocalIp();
+
+	// Create instance of top class
+	mySystemManager = new SystemManager;
+
+	// Start the state machine. This method blocks, so no while(1) is needed.
+	myStateMachine->runToCompletion();
+	
+}
+
+void myAction00(){
+	mySystemManager->action00();
+	return;
+}
+
+void myAction01(){
+	mySystemManager->action01();
+	return;
+}
+
+void myAction10(){
+	mySystemManager->action10();
+	return;
+}
+
+void myAction11(){
+	mySystemManager->action11();
+	return;
+}
+
+void myAction12(){
+	mySystemManager->action12();
+	return;
+}
+
+void myAction13(){
+	mySystemManager->action13();
+	return;
+}
+
+void myAction14(){
+	mySystemManager->action14();
+	return;
+}
+
+void myAction15()){
+	mySystemManager->action15();
+	return;
+}
+
+void myAction16()){
+	mySystemManager->action16();
+	return;
+}
+
+void myAction20()){
+	mySystemManager->action20();
+	return;
+}
+
+void myAction21()){
+	mySystemManager->action21();
+	return;
+}
+
+void myAction22()){
+	mySystemManager->action22();
+	return;
+}
+
+void myAction23()){
+	mySystemManager->action23();
+	return;
+}
+
+void myAction24()){
+	mySystemManager->action24();
+	return;
+}
+
+void myAction25()){
+	mySystemManager->action25();
+	return;
+}
+
+void myAction26()){
+	mySystemManager->action26();
+	return;
+}
+
+void myAction27()){
+	mySystemManager->action27();
+	return;
+}
+
+void myAction28()){
+	mySystemManager->action28();
+	return;
+}
+
+void myAction29()){
+	mySystemManager->action29();
+	return;
+}
+
+void myAction30()){
+	mySystemManager->action30();
+	return;
+}
+
+void myAction31()){
+	mySystemManager->action31();
+	return;
+}
+
+void myAction32()){
+	mySystemManager->action32();
+	return;
+}
+
+void myAction33()){
+	mySystemManager->action33();
+	return;
+}
+
+void myAction34()){
+	mySystemManager->action34();
+	return;
+}
+	
+void myAction35()){
+	mySystemManager->action35();
+	return;
+}
+
+void myAction40()){
+	mySystemManager->action40();
+	return;
+}
+
+void myAction41()){
+	mySystemManager->action41();
+	return;
+}
+
+void myAction42()){
+	mySystemManager->action42();
+	return;
+}
+
+void myAction43()){
+	mySystemManager->action43();
+	return;
+}
+
+void myAction44()){
+	mySystemManager->action44();
+	return;
+}
+
+void myAction50()){
+	mySystemManager->action50();
+	return;
+}
+	
+bool myConditionTrue(){
+	return mySystemManager->conditionTrue();
+}
+
+bool myConditionFormerReqTrue(){
+	return myStateMachine->conditionFormerReqTrue();
+}
+
+bool myConditionFormerReqFalse(){
+	return myStateMachine->conditionFormerReqFalse();
+}

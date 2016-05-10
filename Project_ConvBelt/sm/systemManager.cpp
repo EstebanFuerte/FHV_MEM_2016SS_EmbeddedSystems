@@ -4,6 +4,8 @@
 #include "keyboard.h"
 #include "myFunctions.h"
 
+#include "../communication/TCP_Server.h"
+
 
 extern "C"{
 	#include "../labFiles/hwFunc.h"
@@ -98,6 +100,10 @@ SystemManager :: SystemManager() {
 
 	// Create instance of state machine
 	myStateMachine = new StateMachine;
+	
+	// Create instance of tcp server;
+	myTCPServer = new TCP_Server;
+	myTCPServer->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);

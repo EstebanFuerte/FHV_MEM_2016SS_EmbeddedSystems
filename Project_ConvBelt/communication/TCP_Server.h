@@ -1,4 +1,4 @@
-class TCP_Sercer{
+class TCP_Server{
 	public: 
 		TCP_Sercer();
 		~TCP_Sercer();

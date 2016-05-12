@@ -11,23 +11,33 @@
 #include "strLib.h"
 #include "ioLib.h"
 #include "fioLib.h"
-#include "tcpExample.h"
+//#include "tcpExample.h"
 
-#incldue "../sm/systemManager.h"
-#incldue "../sm/stateMachine.h"
+#include "../sm/systemManager.h"
+#include "../sm/stateMachine.h"
 #include "TCP_Server.h"
 
-TCP_Server :: TCP_Sercer() {	//Konstruktor zum Speicher reservieren
+StateMachine * myStateMachine;
+STATUS tcpServer(void);
+void tcpServerSendReply(int sFd, char * message);
+int sFd;
+
+TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;
 }
 
-TCP_Server :: ~TCP_Sercer() {
+TCP_Server :: ~TCP_Server() {
 	return;
 }
 
 void TCP_Server :: init(){		//Init zum starten des tasks und aufrufen des status
-	serverTask = taskSpawn("tServer",104,0,0x1000, (FUNCPTR) tServer,0,0,0,0,0,0,0,0,0,0);
-	tcpServer();
+	taskSpawn("tcpServer",104,0,0x1000, (FUNCPTR) tcpServer,0,0,0,0,0,0,0,0,0,0);
+	return;
+}
+
+void TCP_Server :: sendMessage(char *message){
+	tcpServerSendReply(sFd, message);
+	return;
 }
 
 /* function declarations */
@@ -68,7 +78,7 @@ STATUS tcpServer(void) {
 	bzero((char *) &serverAddr, sockAddrSize);
 	serverAddr.sin_family = AF_INET;
 	serverAddr.sin_len = (u_char) sockAddrSize;
-	serverAddr.sin_port = htons(SERVER_PORT_NUM);
+	serverAddr.sin_port = htons(SERVER_PORT_NUM_TCP);
 	serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
 	/* create a TCP-based socket */
@@ -136,7 +146,7 @@ VOID tcpServerWorkTask
 	
 	char clientRequest[256];
 	char replyMsg[256];
-	static char welcomeMsg[] = "Welcome to the Server. Enter your request:\n\r";
+	static char welcomeMsg[] = "Welcome to the TCP Server. Enter your request:\n\r";
 	
 	write(sFd, welcomeMsg, sizeof(welcomeMsg));
 	
@@ -144,21 +154,26 @@ VOID tcpServerWorkTask
 	//fioReadString = Funktion wo read aufruft wenn Enter gedrückt wird
 	// while >0, 0 bedeutet Client hat sich abegemeldet         
 	while ((nRead = fioRdString(sFd,  (char *) &clientRequest, sizeof(clientRequest))) > 0) {
+		//printf("in while of TCP\r\n");
 		
-		if (clientRequest[0] == 'request') {
-			printf("Key5IsPressed!\r\n");
+		//strcmp to compare strings in c
+		if (strcmp(clientRequest,"request\r")==0) {
 			myStateMachine->sendEvent("receiveRequest");
+			printf("TCP-Server: request\n\r");
 		}
-		else if (clientRequest[0] == 'wait'){
+		else if (strcmp(clientRequest,"wait\r")==0){			//for debugging only
 			myStateMachine->sendEvent("receiveWait");
+			printf("TCP-Server: wait\n\r");
 
 		}
-		else if (clientRequest[0] == 'ready'){
+		else if (strcmp(clientRequest,"ready\r")==0){			//for debugging only
 			myStateMachine->sendEvent("receiveReady");
+			printf("TCP-Server: ready\n\r");
 
 		}
-		else if (clientRequest[0] == 'release'){
+		else if (strcmp(clientRequest,"release\r")==0){			//for debugging only
 			myStateMachine->sendEvent("receiveRelease");
+			printf("TCP-Server: release\n\r");
 		}
 		else{
 			static char errorMsg[] = " Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";
@@ -169,3 +184,25 @@ VOID tcpServerWorkTask
 		perror ("read");
 			close( sFd); /* close server socket connection */
 	}
+
+void tcpServerSendReply(int sFd, char * message){
+	char sendBuffer[200];
+	sprintf(sendBuffer,message);
+	
+	//strcmp to compare strings in c
+	if (strcmp(sendBuffer,"Release")==0) {
+		printf("TCP-Server - Send: Release\n\r");
+	}
+	else if (strcmp(sendBuffer,"Wait")==0){
+		printf("TCP-Server - Send: Wait\n\r");
+
+	}
+	else if (strcmp(sendBuffer,"Ready")==0){
+		printf("TCP-Server - Send: Ready\n\r");
+
+	}
+	else{
+		static char errorMsg[] = " Unbekannte Antwort";
+		write(sFd, errorMsg, strlen(errorMsg));
+	}
+}

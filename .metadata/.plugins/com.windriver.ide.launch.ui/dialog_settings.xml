@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="com.windriver.ide.launch.ui.context.WRFlatCompositeLaunchContextSelectorMediatorPage">
 		<section name="com.windriver.ide.launch.ui.context.WRFlatCompositeLaunchContextSelectorMediatorPage$WRFlatCompositeLaunchContextSelectorControl">
+			<item value="false" key="noEntryPoint - Project_ConvBelt.out - vxsim0.hideUnconnected"/>
 			<item value="false" key="main - Project_ConvBelt.out - VxWorks6x_90.0.0.50.hideUnconnected"/>
 			<item value="false" key="noEntryPoint - Project_ConvBelt.out - VxWorks6x_90.0.0.50.hideUnconnected"/>
 		</section>

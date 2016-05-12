@@ -54,6 +54,8 @@ public:
 	bool conditionTrue();
 	bool conditionFormerReqTrue();
 	bool conditionFormerReqFalse();
+	bool conditionTimer();
+	bool conditionTimer2();
 
 
 private:

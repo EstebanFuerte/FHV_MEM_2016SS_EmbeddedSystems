@@ -114,6 +114,8 @@ Project_ConvBelt_partialImage/Debug/Objects/Project_ConvBelt/sm/systemManager.o:
   C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/stateTable.h \
   C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/keyboard.h \
   C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/myFunctions.h \
+  C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../communication/TCP_Server.h \
+  C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../communication/Telnet_Server.h \
   C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../labFiles/hwFunc.h
 
 C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h:
@@ -343,6 +345,10 @@ C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/stateTable.h:
 C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/keyboard.h:
 
 C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/myFunctions.h:
+
+C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../communication/TCP_Server.h:
+
+C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../communication/Telnet_Server.h:
 
 C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/../labFiles/hwFunc.h:
 

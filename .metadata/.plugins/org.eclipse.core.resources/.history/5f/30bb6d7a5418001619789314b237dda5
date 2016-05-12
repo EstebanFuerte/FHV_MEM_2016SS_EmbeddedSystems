@@ -1,0 +1,18 @@
+class TCP_Server{
+	/* defines */
+	#define SERVER_PORT_NUM_TCP 		5555 /* server's port number for bind() */
+
+	/* structure for requests from clients to server */
+	struct request{
+		int reply; /* TRUE = request reply from server */
+		int msgLen; /* length of message text */
+		char message[REQUEST_MSG_SIZE]; /* message buffer */ 	
+	};
+	
+	public: 
+		TCP_Server();
+		~TCP_Server();
+		void init();
+	private:
+		int serverTask;
+};

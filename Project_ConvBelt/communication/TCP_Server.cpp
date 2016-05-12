@@ -11,23 +11,24 @@
 #include "strLib.h"
 #include "ioLib.h"
 #include "fioLib.h"
-#include "tcpExample.h"
+//#include "tcpExample.h"
 
-#incldue "../sm/systemManager.h"
-#incldue "../sm/stateMachine.h"
+#include "../sm/systemManager.h"
+#include "../sm/stateMachine.h"
 #include "TCP_Server.h"
 
-TCP_Server :: TCP_Sercer() {	//Konstruktor zum Speicher reservieren
+
+TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;
 }
 
-TCP_Server :: ~TCP_Sercer() {
+TCP_Server :: ~TCP_Server() {
 	return;
 }
 
 void TCP_Server :: init(){		//Init zum starten des tasks und aufrufen des status
-	serverTask = taskSpawn("tServer",104,0,0x1000, (FUNCPTR) tServer,0,0,0,0,0,0,0,0,0,0);
-	tcpServer();
+	serverTask = taskSpawn("tcpServer2",104,0,0x1000, (FUNCPTR) tcpServer,0,0,0,0,0,0,0,0,0,0);
+	return;
 }
 
 /* function declarations */

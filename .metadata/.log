@@ -532,3 +532,6 @@ java.lang.IllegalArgumentException: request is not a member of Telnet_Server
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
 	at org.eclipse.equinox.launcher.WRWBMain.main(WRWBMain.java:37)
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 18:01:12.313
+!MESSAGE TM shutdown completed.

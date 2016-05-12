@@ -20,7 +20,8 @@
 StateMachine * myStateMachine;
 STATUS tcpServer(void);
 void tcpServerSendReply(int sFd, char * message);
-int sFd;
+
+int new_sfd;
 
 TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;
@@ -36,7 +37,7 @@ void TCP_Server :: init(){		//Init zum starten des tasks und aufrufen des status
 }
 
 void TCP_Server :: sendMessage(char *message){
-	tcpServerSendReply(sFd, message);
+	tcpServerSendReply(new_sfd, message);
 	return;
 }
 

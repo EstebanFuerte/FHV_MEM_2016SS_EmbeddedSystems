@@ -19,8 +19,6 @@
 
 StateMachine * myStateMachine;
 STATUS tcpServer(void);
-void tcpServerSendReply(int sFd, char * message);
-int sFd;
 
 TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;
@@ -32,11 +30,6 @@ TCP_Server :: ~TCP_Server() {
 
 void TCP_Server :: init(){		//Init zum starten des tasks und aufrufen des status
 	taskSpawn("tcpServer",104,0,0x1000, (FUNCPTR) tcpServer,0,0,0,0,0,0,0,0,0,0);
-	return;
-}
-
-void TCP_Server :: sendMessage(char *message){
-	tcpServerSendReply(sFd, message);
 	return;
 }
 
@@ -198,11 +191,11 @@ void tcpServerSendReply(int sFd, char * message){
 
 	}
 	else if (strcmp(sendBuffer,"Ready")==0){
-		printf("TCP-Server - Send: Ready\n\r");
+		printf("TCP-Server: ready\n\r");
 
 	}
 	else{
-		static char errorMsg[] = " Unbekannte Antwort";
+		static char errorMsg[] = " Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";
 		write(sFd, errorMsg, strlen(errorMsg));
 	}
 }

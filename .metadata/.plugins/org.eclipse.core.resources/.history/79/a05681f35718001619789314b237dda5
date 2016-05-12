@@ -18,5 +18,4 @@ class TCP_Server{
 		TCP_Server();
 		~TCP_Server();
 		void init();
-		void sendMessage(char *message);
 };

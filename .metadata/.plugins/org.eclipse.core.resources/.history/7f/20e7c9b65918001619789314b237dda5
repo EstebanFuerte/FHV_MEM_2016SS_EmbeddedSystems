@@ -206,7 +206,6 @@ void SystemManager :: action21(){	// CM - from slowMovement1 to runChainProfile
 	sprintf (textBuffer,"State: runChainProfile        "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startChainProfile");
-	myTCPServer->sendMessage("Ready");
 	return;
 }
 
@@ -256,7 +255,6 @@ void SystemManager :: action28(){	// CM - from idleChainMode to idle LocalMode
 void SystemManager :: action29(){	// CM - Answer Requsts during oparation
 	sprintf (textBuffer,"ReceivedMessages = Request       "); writeToDisplay (9, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Wait!!!!!!!!!!!!!!"); writeToDisplay (11, 20, textBuffer);
-	myTCPServer->sendMessage("Wait");
 	formerRequest = true;
 	return;
 }

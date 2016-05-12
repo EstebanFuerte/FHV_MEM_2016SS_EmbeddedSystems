@@ -20,7 +20,6 @@
 StateMachine * myStateMachine;
 STATUS tcpServer(void);
 void tcpServerSendReply(int sFd, char * message);
-int sFd;
 
 TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;

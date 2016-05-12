@@ -1,0 +1,8 @@
+class TCP_Server{
+	public: 
+		TCP_Server();
+		~TCP_Server();
+		void init();
+	private:
+		int serverTask;
+};

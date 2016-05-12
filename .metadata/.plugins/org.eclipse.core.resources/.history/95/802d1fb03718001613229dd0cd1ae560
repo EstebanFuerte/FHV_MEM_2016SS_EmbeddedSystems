@@ -17,6 +17,7 @@
 #include "../sm/stateMachine.h"
 #include "TCP_Server.h"
 
+void tcpServer();
 
 TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;

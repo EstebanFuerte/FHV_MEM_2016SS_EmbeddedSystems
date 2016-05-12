@@ -4,7 +4,7 @@
 #include "keyboard.h"
 #include "myFunctions.h"
 
-//#include "../communication/TCP_Server.h"
+#include "../communication/TCP_Server.h"
 
 
 extern "C"{
@@ -14,13 +14,13 @@ extern "C"{
 char textBuffer[88];
 int speed,step;	// motorspeed calculation
 float tempSpeed;
-float zeroSpeed=2490.0;
+float zeroSpeed=2490,0;
 bool direction;				// rotation of the motor
 bool formerRequest;			// to save request during operation mode
 
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
-//TCPServer * myTCPServer;
+TCPServer * myTCPServer;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)
@@ -102,8 +102,8 @@ SystemManager :: SystemManager() {
 	myStateMachine = new StateMachine;
 	
 	// Create instance of tcp server;
-	//myTCPServer = new TCP_Server;
-	//myTCPServer->init();
+	myTCPServer = new TCP_Server;
+	myTCPServer->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);

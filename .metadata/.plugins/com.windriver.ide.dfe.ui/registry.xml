@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <java version="1.6.0_21" class="java.beans.XMLDecoder"> 
+ <string>*** NODE ***</string> 
+ <string>Backends</string> 
+ <string>*** END ***</string> 
  <string>BreakpointsSkipAll</string> 
  <boolean>false</boolean> 
+ <string>*** NODE ***</string> 
+ <string>Configs</string> 
+ <string>*** END ***</string> 
  <string>*** NODE ***</string> 
  <string>File</string> 
  <string>*** END ***</string> 
@@ -11,6 +17,9 @@
  <string>Preferences</string> 
  <string>BreakpointScope</string> 
  <string>target</string> 
+ <string>*** END ***</string> 
+ <string>*** NODE ***</string> 
+ <string>User</string> 
  <string>*** END ***</string> 
  <string>WorkspacePath</string> 
  <string>C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\com.windriver.ide.dfe.ui</string> 

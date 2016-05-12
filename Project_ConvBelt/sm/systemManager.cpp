@@ -4,7 +4,8 @@
 #include "keyboard.h"
 #include "myFunctions.h"
 
-//#include "../communication/TCP_Server.h"
+#include "../communication/TCP_Server.h"
+#include "../communication/Telnet_Server.h"
 
 
 extern "C"{
@@ -21,7 +22,8 @@ bool formerRequest;			// to save request during operation mode
 
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
-//TCPServer * myTCPServer;
+TCP_Server * myTCPServer;
+Telnet_Server * myTelnetServer;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)
@@ -103,8 +105,12 @@ SystemManager :: SystemManager() {
 	myStateMachine = new StateMachine;
 	
 	// Create instance of tcp server;
-	//myTCPServer = new TCP_Server;
-	//myTCPServer->init();
+	myTCPServer = new TCP_Server;
+	myTCPServer->init();
+	
+	// Create instance of telnet server:
+	myTelnetServer = new Telnet_Server;
+	myTelnetServer->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);

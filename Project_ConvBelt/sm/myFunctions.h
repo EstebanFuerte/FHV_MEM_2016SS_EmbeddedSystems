@@ -42,5 +42,8 @@ void myAction41();
 bool myConditionTrue();
 bool myConditionFormerReqTrue();
 bool myConditionFormerReqFalse();
+bool myConditionTimer();
+bool myConditionTimer2();
+
 
 #endif // MYFUNCTIONS_H_

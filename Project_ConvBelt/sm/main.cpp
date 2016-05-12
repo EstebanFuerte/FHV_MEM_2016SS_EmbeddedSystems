@@ -203,3 +203,11 @@ bool myConditionFormerReqTrue(){
 bool myConditionFormerReqFalse(){
 	return mySystemManager->conditionFormerReqFalse();
 }
+
+bool myConditionTimer(){
+	return mySystemManager->conditionTimer();
+}
+
+bool myConditionTimer2(){
+	return mySystemManager->conditionTimer2();
+}

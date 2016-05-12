@@ -14,13 +14,13 @@ extern "C"{
 char textBuffer[88];
 int speed,step;	// motorspeed calculation
 float tempSpeed;
-float zeroSpeed=2490.0;
+float zeroSpeed=2490,0;
 bool direction;				// rotation of the motor
 bool formerRequest;			// to save request during operation mode
 
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
-//TCPServer * myTCPServer;
+TCPServer * myTCPServer;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)

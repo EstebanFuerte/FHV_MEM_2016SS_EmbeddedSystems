@@ -350,3 +350,69 @@ at C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/systemManager.cpp
 
 !ENTRY com.windriver.ide.target 1 0 2016-04-28 08:50:14.535
 !MESSAGE TM shutdown completed.
+!SESSION 2016-04-28 13:23:32.526 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-04-28 13:23:44.627
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-04-28 13:24:07.347
+!MESSAGE Workbench license obtained in 0,56s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide 1 0 2016-04-28 13:24:08.253
+!MESSAGE Workbench start-up time: 32,98s, Main window shown after: 30,64s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:24:20.770
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\wtxregd.exe
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:24:23.504
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:24:24.801
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:1197, PID=5648, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:24:24.864
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:26:43.869
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY com.windriver.ide.target 1 0 2016-04-28 13:41:37.126
+!MESSAGE TM shutdown completed.
+!SESSION 2016-05-12 13:37:21.811 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-05-12 13:37:32.376
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-05-12 13:37:42.793
+!MESSAGE Workbench license obtained in 0,13s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide 1 0 2016-05-12 13:37:43.356
+!MESSAGE Workbench start-up time: 17,35s, Main window shown after: 16,25s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 13:37:55.038
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\wtxregd.exe
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 13:37:57.637
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 2 0 2016-05-12 13:37:58.855
+!MESSAGE Race Condition while starting debug server: launched on 127.0.0.1:60904 but Registry-session is at U131-06:60904
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 13:37:58.867
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:60904, PID=960, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 13:37:58.911
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-12 13:53:52.770
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50

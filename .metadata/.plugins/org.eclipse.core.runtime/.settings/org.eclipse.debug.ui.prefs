@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
 org.eclispe.debug.ui.Debug_view.debug_toolbar_hidden_perspectives=com.windriver.ide.perspective.Hardware,com.windriver.ide.perspective.SDE,DFE,com.windriver.ide.perspective.ADE,org.eclipse.tcf.te.ui.perspective,com.windriver.ide.perspective.OCD,org.eclipse.debug.ui.DebugPerspective,
+pref_state_memento.org.eclipse.debug.ui.DebugVieworg.eclipse.debug.ui.DebugView=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<DebugViewMemento org.eclipse.debug.ui.BREADCRUMB_DROPDOWN_AUTO_EXPAND\="false"/>
 preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|
 preferredTargets=com.windriver.ide.debug.toggleCBreakpointTarget,org.eclipse.cdt.debug.ui.toggleCBreakpointTarget\:com.windriver.ide.debug.toggleCBreakpointTarget|

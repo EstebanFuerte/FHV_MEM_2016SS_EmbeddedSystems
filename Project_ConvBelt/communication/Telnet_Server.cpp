@@ -1,5 +1,5 @@
 /* Author: Stefan Stark
- * Source: Wind River Network Stack for VxWorks 6 - page 198 - modified for TELNET
+ * Source: Wind River Network Stack for VxWorks 6 - page 198 
  */
 
 /* includes */
@@ -11,11 +11,14 @@
 #include "strLib.h"
 #include "ioLib.h"
 #include "fioLib.h"
-#include "tcpExample.h"
+//#include "tcpExample.h"
 
-#incldue "../sm/systemManager.h"
-#incldue "../sm/stateMachine.h"
+#include "../sm/systemManager.h"
+#include "../sm/stateMachine.h"
 #include "Telnet_Server.h"
+
+StateMachine * myStateMachine;
+STATUS TelnetServer(void);
 
 Telnet_Server :: Telnet_Server() {	//Konstruktor zum Speicher reservieren
 	return;
@@ -26,17 +29,16 @@ Telnet_Server :: ~Telnet_Server() {
 }
 
 void Telnet_Server :: init(){		//Init zum starten des tasks und aufrufen des status
-	serverTask = taskSpawn("tTelnet",104,0,0x1000, (FUNCPTR) tServer,0,0,0,0,0,0,0,0,0,0);
-	tcpServer();
+	taskSpawn("TelnetServer",104,0,0x1000, (FUNCPTR) TelnetServer,0,0,0,0,0,0,0,0,0,0);
+	return;
 }
 
 /* function declarations */
-VOID telnetServerWorkTask(int sFd, char * address, u_short port);
+VOID TelnetServerWorkTask(int sFd, char * address, u_short port);
 
-
-STATUS telnetServer(void) {
+STATUS TelnetServer(void) {
 	
-	printf("in telnetServer\n");
+	printf("in TelnetServer\n");
 	
 	struct sockaddr_in 	serverAddr; /* server's socket address */
 	struct sockaddr_in 	clientAddr; /* client's socket address */
@@ -54,7 +56,7 @@ STATUS telnetServer(void) {
 	serverAddr.sin_port = htons(SERVER_PORT_NUM);
 	serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-	/* create a TCP-based socket */
+	/* create a Telnet-based socket */
 	if ((sFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR) {
 		perror("socket");
 		return (ERROR);
@@ -83,9 +85,9 @@ STATUS telnetServer(void) {
 			close(sFd);
 			return (ERROR);
 		}
-		sprintf(workName, "tTcpWork%d", ix++);
+		sprintf(workName, "tTelnetWork%d", ix++);
 		if (taskSpawn(workName, SERVER_WORK_PRIORITY, 0, SERVER_STACK_SIZE,
-				(FUNCPTR) tcpServerWorkTask, newFd,
+				(FUNCPTR) TelnetServerWorkTask, newFd,
 				(int) inet_ntoa(clientAddr.sin_addr),
 				ntohs(clientAddr.sin_port), 0, 0, 0, 0, 0, 0, 0) == ERROR) {
 			/* if taskSpawn fails, close fd and return to top of loop */
@@ -95,7 +97,7 @@ STATUS telnetServer(void) {
 	}
 }
 
-VOID telnetServerWorkTask
+VOID TelnetServerWorkTask
 	(
 	int 			sFd, 		/* server's socket fd */
 	char * 			address, 	/* client's socket address */
@@ -116,21 +118,43 @@ VOID telnetServerWorkTask
 	//fioReadString = Funktion wo read aufruft wenn Enter gedrückt wird
 	// while >0, 0 bedeutet Client hat sich abegemeldet         
 	while ((nRead = fioRdString(sFd,  (char *) &clientRequest, sizeof(clientRequest))) > 0) {
+		//printf("in while of Telnet\r\n");
 		
-		if (clientRequest[0] == 'request') {
-			printf("Key5IsPressed!\r\n");
-			myStateMachine->sendEvent("receiveRequest");
+		//strcmp to compare strings in c
+		if (strcmp(clientRequest,"IncSpeed\r")==0) {
+			myStateMachine->sendEvent("keyIncIsPressed");
+			printf("Telnet-Server: IncSpeed\n\r");
 		}
-		else if (clientRequest[0] == 'wait'){
-			myStateMachine->sendEvent("receiveWait");
+		else if (strcmp(clientRequest,"DecSpeed\r")==0){
+			myStateMachine->sendEvent("keyDecIsPressed");
+			printf("Telnet-Server: DecSpeed\n\r");
 
 		}
-		else if (clientRequest[0] == 'ready'){
-			myStateMachine->sendEvent("receiveReady");
+		else if (strcmp(clientRequest,"DirRight\r")==0){
+			myStateMachine->sendEvent("keyRightIsPressed");
+			printf("Telnet-Server: DirRight\n\r");
 
 		}
-		else if (clientRequest[0] == 'release'){
+		else if (strcmp(clientRequest,"DirLeft\r")==0){
+			myStateMachine->sendEvent("keyLeftIsPressed");
+			printf("Telnet-Server: DirLeft\n\r");
+		}
+		
+		else if (strcmp(clientRequest,"DirLeft\r")==0){
 			myStateMachine->sendEvent("receiveRelease");
+			printf("Telnet-Server: DirLeft\n\r");
+		}
+		else if (strcmp(clientRequest,"Start\r")==0){
+			myStateMachine->sendEvent("keyStartIsPressed");
+			printf("Telnet-Server: DirLeft\n\r");
+		}
+		else if (strcmp(clientRequest,"LM\r")==0){
+			myStateMachine->sendEvent("keyAIsPressed");
+			printf("Telnet-Server: choose local mode\n\r");
+		}
+		else if (strcmp(clientRequest,"CM\r")==0){
+			myStateMachine->sendEvent("keyBIsPressed");
+			printf("Telnet-Server: choose chain mode\n\r");
 		}
 		else{
 			static char errorMsg[] = " Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";

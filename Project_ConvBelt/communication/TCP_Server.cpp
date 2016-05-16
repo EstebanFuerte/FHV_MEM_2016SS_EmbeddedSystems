@@ -186,19 +186,25 @@ VOID tcpServerWorkTask
 	}
 
 void tcpServerSendReply(int sFd, char * message){
-	char sendBuffer[200];
+	char sendBuffer[256];
 	sprintf(sendBuffer,message);
 	
 	//strcmp to compare strings in c
 	if (strcmp(sendBuffer,"Release")==0) {
 		printf("TCP-Server - Send: Release\n\r");
+		static char msg[]= "Release";
+		write(sFd, msg, sizeof(msg));
 	}
 	else if (strcmp(sendBuffer,"Wait")==0){
 		printf("TCP-Server - Send: Wait\n\r");
+		static char msg[]= "Wait";
+		write(sFd, msg, sizeof(msg));
 
 	}
 	else if (strcmp(sendBuffer,"Ready")==0){
 		printf("TCP-Server - Send: Ready\n\r");
+		static char msg[]= "Ready";
+		write(sFd, msg, sizeof(msg));
 
 	}
 	else{

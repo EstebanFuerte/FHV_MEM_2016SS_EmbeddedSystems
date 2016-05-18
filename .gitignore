@@ -49,3 +49,5 @@ Temporary Items
 *.log
 *.log
 /.metadata
+*.log
+.metadata/.log

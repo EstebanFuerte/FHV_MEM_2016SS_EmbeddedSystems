@@ -12,10 +12,12 @@ socket routine calls.
 #include "vxWorks.h"
 #include "sockLib.h"
 #include "inetLib.h"
+#include "taskLib.h"
 #include "stdioLib.h"
 #include "strLib.h"
 #include "hostLib.h"
 #include "ioLib.h"
+#include "fioLib.h"
 
 #include "../sm/systemManager.h"
 #include "../sm/stateMachine.h"
@@ -23,6 +25,8 @@ socket routine calls.
 
 StateMachine * myStateMachine;
 STATUS tcpClient(char * serverName);
+STATUS send_Request(char * message);
+int sFd;
 
 
 //c++ Methods
@@ -34,12 +38,12 @@ TCP_Client :: ~TCP_Client(){			// Dekonstruktor
 	return;
 }
 
-TCP_Client :: init(){
+void TCP_Client :: init(){
 	taskSpawn("tcpClient",104,0,0x1000, (FUNCPTR) tcpClient,0,0,0,0,0,0,0,0,0,0);
 	return;
 }
 
-TCP_Client :: sendMessage(char * message){
+void TCP_Client :: sendMessage(char * message){
 	send_Request(message);
 	return;
 }
@@ -68,7 +72,7 @@ STATUS tcpClient
 	char * serverName /* name or IP address of server */
 	)
 	{
-	struct request myRequest; /* request to send to server */
+	//struct request myRequest; /* request to send to server */
 	struct sockaddr_in serverAddr; /* server's socket address */
 	char replyBuf[REPLY_MSG_SIZE]; /* buffer for reply */
 	char reply; /* if TRUE, expect reply back */
@@ -89,7 +93,8 @@ STATUS tcpClient
 	bzero ((char *) &serverAddr, sockAddrSize);
 	serverAddr.sin_family = AF_INET;
 	serverAddr.sin_len = (u_char) sockAddrSize;
-	serverAddr.sin_port = htons (SERVER_PORT_NUM);
+	serverAddr.sin_port = htons (SERVER_PORT_NUM_TCP);
+	
 	if (((serverAddr.sin_addr.s_addr = inet_addr (serverName)) == ERROR) &&
 	((serverAddr.sin_addr.s_addr = hostGetByName (serverName)) == ERROR))
 	{
@@ -138,11 +143,11 @@ STATUS tcpClient
 			printf("TCP-Client; receiveRelease\r\n");
 			myStateMachine->sendEvent("receiveRelease");
 		}
-		else if(strcmp(replyBuf,"Wait")==0)){
+		else if(strcmp(replyBuf,"Wait")==0){
 			printf("TCP-Client; Wait\r\n");
 			myStateMachine->sendEvent("Wait");
 		}
-		else if(strcmp(replyBuf,"Ready")==0)){
+		else if (strcmp(replyBuf,"Ready")==0){
 			printf("TCP-Client; Ready\r\n");
 			myStateMachine->sendEvent("Ready");
 		}
@@ -156,7 +161,7 @@ STATUS tcpClient
 	return (OK);
 	}
 
-void sendMessage(char * message){
+STATUS send_Request(char * message){
 	char sendBuffer[256];
 	sprintf(sendBuffer,message);
 	
@@ -165,6 +170,11 @@ void sendMessage(char * message){
 		perror ("write");
 		close (sFd);
 		return (ERROR);
+	}
+	else
+	{
+		close (sFd);
+		return (OK);
 	}
 	
 }

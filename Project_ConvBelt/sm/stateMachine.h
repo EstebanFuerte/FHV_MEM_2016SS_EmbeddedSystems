@@ -17,6 +17,7 @@ public:
 	void runToCompletion();
 	std::string myEvent;
 	DiaTimer * diaTimerTable[MAXDIA];
+	char rightServerIP[20];
 
 private:
 	SEM_ID volatile semQueue, semEvent;

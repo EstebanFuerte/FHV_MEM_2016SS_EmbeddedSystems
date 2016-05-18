@@ -146,9 +146,13 @@ VOID tcpServerWorkTask
 	
 	char clientRequest[256];
 	char replyMsg[256];
-	static char welcomeMsg[] = "Welcome to the TCP Server. Enter your request:\n\r";
-	
+	static char welcomeMsg[] = "Welcome to the TCP Server.\n\r";
 	write(sFd, welcomeMsg, sizeof(welcomeMsg));
+	
+	// Set connection to client, show Client ip
+	char addresClient[20];
+	spritnf(addresClient,"Client-IP: %s\n\r",address);
+	write(sft,addresClient);
 	
 	/* read client request, display message */
 	//fioReadString = Funktion wo read aufruft wenn Enter gedrückt wird
@@ -156,8 +160,13 @@ VOID tcpServerWorkTask
 	while ((nRead = fioRdString(sFd,  (char *) &clientRequest, sizeof(clientRequest))) > 0) {
 		//printf("in while of TCP\r\n");
 		
-		//strcmp to compare strings in c
-		if (strcmp(clientRequest,"request\r")==0) {
+		
+		if (strncmp(clientRequest, "Right",5)==0){				//parse IP
+			sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,"0123456789"));
+			myStateMachine->myTCPClient = new TCP_Client;
+			
+		}
+		else if (strcmp(clientRequest,"request\r")==0) {//strcmp to compare strings in c
 			myStateMachine->sendEvent("receiveRequest");
 			printf("TCP-Server: request\n\r");
 		}

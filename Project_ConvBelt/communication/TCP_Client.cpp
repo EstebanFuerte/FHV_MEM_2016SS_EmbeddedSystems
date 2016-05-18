@@ -39,7 +39,7 @@ TCP_Client :: ~TCP_Client(){			// Dekonstruktor
 }
 
 void TCP_Client :: init(){
-	taskSpawn("tcpClient",104,0,0x1000, (FUNCPTR) tcpClient,0,0,0,0,0,0,0,0,0,0);
+	taskSpawn("tcpClient",104,0,0x1000, (FUNCPTR) tcpClient,myTaskManager->rightServerIP,0,0,0,0,0,0,0,0,0);
 	return;
 }
 

@@ -98,7 +98,8 @@ STATUS tcpClient
 	if (((serverAddr.sin_addr.s_addr = inet_addr (serverName)) == ERROR) &&
 	((serverAddr.sin_addr.s_addr = hostGetByName (serverName)) == ERROR))
 	{
-		perror ("unknown server name");
+		perror ("unknown server name:");
+		printf ("serverName:\n%s\n", serverName);
 		close (sFd);
 		return (ERROR);
 	}

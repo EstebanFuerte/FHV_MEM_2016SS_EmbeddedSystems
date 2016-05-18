@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="sFd" key="selection"/>
+		<item value="in tc" key="selection"/>
 		<list key="findhistory">
+			<item value="in tc"/>
+			<item value="unknown"/>
+			<item value="unkown"/>
+			<item value="unkonwn"/>
+			<item value="serverName"/>
+			<item value="hostGetByName"/>
+			<item value="myRequest"/>
 			<item value="sFd"/>
-			<item value="SERVER_PORT_NUM"/>
-			<item value="TCP"/>
-			<item value="printf"/>
-			<item value="acc"/>
-			<item value="runSlowMovement2"/>
-			<item value="zeroSp"/>
-			<item value="direction"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Telnet"/>

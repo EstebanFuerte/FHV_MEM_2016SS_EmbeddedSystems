@@ -6,6 +6,7 @@
 
 #include "../communication/TCP_Server.h"
 #include "../communication/Telnet_Server.h"
+#include "../communication/TCP_Client.h"
 
 
 extern "C"{

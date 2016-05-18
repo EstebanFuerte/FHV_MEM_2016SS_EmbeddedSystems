@@ -24,6 +24,7 @@ StateMachine * myStateMachine;
 Keyboard * myKeyboard;
 TCP_Server * myTCPServer;
 Telnet_Server * myTelnetServer;
+TCP_Client * myTCPClient;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)
@@ -111,6 +112,10 @@ SystemManager :: SystemManager() {
 	// Create instance of telnet server:
 	myTelnetServer = new Telnet_Server;
 	myTelnetServer->init();
+	
+	// Create instance of tcp client:
+	myTCPClient = new TCP_Client;
+	myTCPClient->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
@@ -199,6 +204,7 @@ void SystemManager :: action20(){	// CM - from idleChainMode to slowMovement1
 	sprintf (textBuffer,"State: runSlowMovement1          "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startSlowMovement1");
+	myTCPServer->sendMessage("Ready");
 	return;
 }
 
@@ -206,13 +212,15 @@ void SystemManager :: action21(){	// CM - from slowMovement1 to runChainProfile
 	sprintf (textBuffer,"State: runChainProfile        "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startChainProfile");
-	myTCPServer->sendMessage("Ready");
+	myTCPServer->sendMessage("Release");
 	return;
 }
 
 void SystemManager :: action22(){	// CM - from runChainProfile to waitForReady
 	sprintf (textBuffer,"State: waitForReady         "); writeToDisplay (13, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Request         "); writeToDisplay (11, 20, textBuffer);
+	
+	myTCPClient->sendMessage("Request");
 	return;
 }
 

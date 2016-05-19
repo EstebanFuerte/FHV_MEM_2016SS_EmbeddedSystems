@@ -23,10 +23,18 @@ socket routine calls.
 #include "../sm/stateMachine.h"
 #include "TCP_Client.h"
 
+
+//const char *serverName;
+//sprintf(serverName,"91.0.0.105");
+
+
 StateMachine * myStateMachine;
 STATUS tcpClient(char * serverName);
-STATUS send_Request(char * message);
-int sFd;
+STATUS send_Request(int sFdClient, char * message);
+int sFdClient;
+char ipAdress[20];
+
+
 
 
 //c++ Methods
@@ -39,12 +47,14 @@ TCP_Client :: ~TCP_Client(){			// Dekonstruktor
 }
 
 void TCP_Client :: init(){
-	taskSpawn("tcpClient",104,0,0x1000, (FUNCPTR) tcpClient,myTaskManager->rightServerIP,0,0,0,0,0,0,0,0,0);
+	strcpy(ipAdress,"91.0.0.105");
+	taskSpawn("tcpClient",140,0,0x1000, (FUNCPTR) tcpClient,(int)ipAdress,0,0,0,0,0,0,0,0,0);
+	printf("TCP_Client :: init() serverName: %s\n\r",ipAdress);
 	return;
 }
 
 void TCP_Client :: sendMessage(char * message){
-	send_Request(message);
+	send_Request(sFdClient,message);
 	return;
 }
 /****************************************************************************
@@ -72,20 +82,26 @@ STATUS tcpClient
 	char * serverName /* name or IP address of server */
 	)
 	{
+	int nRead;
+	printf("TCP_Client: STATUS tcpClient, serverName: %s\r\n",serverName);
+	
 	//struct request myRequest; /* request to send to server */
 	struct sockaddr_in serverAddr; /* server's socket address */
 	char replyBuf[REPLY_MSG_SIZE]; /* buffer for reply */
 	char reply; /* if TRUE, expect reply back */
 	int sockAddrSize; /* size of socket address structure */
-	int sFd; /* socket file descriptor */
+	int sFdClient; /* socket file descriptor */
 	int mlen; /* length of message */
 	
 	/* create client's socket */
-	if ((sFd = socket (AF_INET, SOCK_STREAM, 0)) == ERROR)
+	if ((sFdClient = socket (AF_INET, SOCK_STREAM, 0)) == ERROR)
 	{
 		perror ("socket");
 		return (ERROR);
 	}
+	
+	//printout Client socket
+	printf("TCP_Client: tcpClient - Socket: %d\r\n", sFdClient);
 	
 	/* bind not required - port number is dynamic */
 	/* build server socket address */
@@ -98,19 +114,20 @@ STATUS tcpClient
 	if (((serverAddr.sin_addr.s_addr = inet_addr (serverName)) == ERROR) &&
 	((serverAddr.sin_addr.s_addr = hostGetByName (serverName)) == ERROR))
 	{
-		perror ("unknown server name:");
-		printf ("serverName:\n%s\n", serverName);
-		close (sFd);
+		perror ("TCP_Client: unknown server name:");
+		printf ("TCP_Client: serverName:\n%s\n", serverName);
+		close (sFdClient);
 		return (ERROR);
 	}
 	
 	/* connect to server */
-	if (connect (sFd, (struct sockaddr *) &serverAddr, sockAddrSize) == ERROR)
+	if (connect (sFdClient, (struct sockaddr *) &serverAddr, sockAddrSize) == ERROR)
 	{
 		perror ("connect");
-		close (sFd);
+		close (sFdClient);
 		return (ERROR);
 	}
+	printf("TCP_Client: connectedToServer:%s\n\r",serverName);
 	
 	/* build request, prompting user for message 
 	printf ("Message to send: \n");
@@ -137,44 +154,60 @@ STATUS tcpClient
 	}*/
 	/*if (myRequest.reply) // if expecting reply, read and display it 
 	{*/
-	if (read (sFd, replyBuf, REPLY_MSG_SIZE) < 0)
-	{
-		if(strcmp(replyBuf,"Release")==0)
-		{
-			printf("TCP-Client; receiveRelease\r\n");
-			myStateMachine->sendEvent("receiveRelease");
-		}
-		else if(strcmp(replyBuf,"Wait")==0){
-			printf("TCP-Client; Wait\r\n");
-			myStateMachine->sendEvent("Wait");
-		}
-		else if (strcmp(replyBuf,"Ready")==0){
-			printf("TCP-Client; Ready\r\n");
-			myStateMachine->sendEvent("Ready");
-		}
+	while ((nRead = fioRdString(sFdClient,  (char *) &replyBuf, sizeof(replyBuf))) > 0) {
+	//if (read (sFdClient, replyBuf, REPLY_MSG_SIZE) < 0)
+	/*{
 		perror ("read");
-		close (sFd);
+		//close (sFdClient);
 		return (ERROR);
 	}
-	printf ("MESSAGE FROM SERVER:\n%s\n", replyBuf);
+	else {*/
+		printf("TCP_Client: im read -> rplyBuf !=0: %s\n\r",replyBuf);
+		
+		if(strcmp(replyBuf,"RELEASE\r")==0)
+		{
+			printf("TCP-Client; receiveRelease; %d\r\n",sFdClient);
+			myStateMachine->sendEvent("receiveRelease");
+		}
+		else if(strcmp(replyBuf,"WAIT\r")==0){
+			printf("TCP-Client: Wait; %d\r\n",sFdClient);
+			myStateMachine->sendEvent("receiveWait");
+		}
+		else if (strcmp(replyBuf,"READY\r")==0){
+			printf("TCP-Client: Ready; %d\r\n",sFdClient);
+			myStateMachine->sendEvent("receiveReady");
+		}
 	//}
-	close (sFd);
-	return (OK);
+	//printf ("MESSAGE FROM SERVER:\n%s\n", replyBuf);
 	}
+	//close (sFd);
+	return (OK);
+}
 
-STATUS send_Request(char * message){
+STATUS send_Request(int sFdClient,char * message){
+	
 	char sendBuffer[256];
 	sprintf(sendBuffer,message);
 	
-	if (write (sFd, (char *) &sendBuffer, sizeof (sendBuffer)) == ERROR)
+	printf("TCP_Client: send_Request: %s, %d\n\r",sendBuffer, sFdClient);
+	
+	/*
+	 *	Send from TCP-Server
+	 * 	static char errorMsg[] = "TCP-Server: Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";
+		write(sFdServer, errorMsg, strlen(errorMsg));
+	 */
+	
+	if (write (sFdClient, sendBuffer, strlen(sendBuffer)) == ERROR)
 	{
 		perror ("write");
-		close (sFd);
+		close (sFdClient);
 		return (ERROR);
 	}
 	else
 	{
-		close (sFd);
+		//write(sFdClient, sendBuffer, strlen(sendBuffer));
+		printf("TCP_Client: send_Request done! sendBuffer: %s %d\n\r",sendBuffer,sFdClient);
+		//close (sFd);
 		return (OK);
 	}
 	

@@ -19,8 +19,8 @@
 
 StateMachine * myStateMachine;
 STATUS tcpServer(void);
-void tcpServerSendReply(int sFd, char * message);
-int sFd;
+void tcpServerSendReply(int sFdServer, char * message);
+int sFdServer;
 
 TCP_Server :: TCP_Server() {	//Konstruktor zum Speicher reservieren
 	return;
@@ -36,12 +36,12 @@ void TCP_Server :: init(){		//Init zum starten des tasks und aufrufen des status
 }
 
 void TCP_Server :: sendMessage(char *message){
-	tcpServerSendReply(sFd, message);
+	tcpServerSendReply(sFdServer, message);
 	return;
 }
 
 /* function declarations */
-VOID tcpServerWorkTask(int sFd, char * address, u_short port);
+VOID tcpServerWorkTask(int sFdServer, char * address, u_short port);
 
 /****************************************************************************
  *
@@ -68,7 +68,7 @@ STATUS tcpServer(void) {
 	struct sockaddr_in 	serverAddr; /* server's socket address */
 	struct sockaddr_in 	clientAddr; /* client's socket address */
 	int 				sockAddrSize; /* size of socket address structure */
-	int 				sFd; /* socket file descriptor */
+	int 				sFdServer; /* socket file descriptor */
 	int 				newFd; /* socket descriptor from accept */
 	int 				ix = 0; /* counter for work task names */
 	char 				workName[16]; /* name of work task */
@@ -82,32 +82,35 @@ STATUS tcpServer(void) {
 	serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
 	/* create a TCP-based socket */
-	if ((sFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR) {
+	if ((sFdServer = socket(AF_INET, SOCK_STREAM, 0)) == ERROR) {
 		perror("socket");
 		return (ERROR);
 	}
+	
+	//printout Server socket
+	printf("TCP_Server: tcpServer - Socket: %d\r\n", sFdServer);
 
 	/* bind socket to local address */
-	if (bind(sFd, (struct sockaddr *) &serverAddr, sockAddrSize) == ERROR) {
+	if (bind(sFdServer, (struct sockaddr *) &serverAddr, sockAddrSize) == ERROR) {
 		perror("bind");
-		close(sFd);
+		close(sFdServer);
 		return (ERROR);
 	}
 
 	/* create queue for client connection requests */
-	if (listen(sFd, SERVER_MAX_CONNECTIONS) == ERROR) {
+	if (listen(sFdServer, SERVER_MAX_CONNECTIONS) == ERROR) {
 		perror("listen");
-		close(sFd);
+		close(sFdServer);
 		return (ERROR);
 	}
 
 	/* accept new connect requests and spawn tasks to process them */
 	while (TRUE) {	//Anstatt FOREVER
 			socklen_t len = sizeof(clientAddr); //Muss neu hinzugefügt werden, damit mehrer Verbindungen aufgebaut werden können
-		if ((newFd = accept(sFd, (struct sockaddr *) &clientAddr, &len))
+		if ((newFd = accept(sFdServer, (struct sockaddr *) &clientAddr, &len))
 				== ERROR) {
 			perror("accept");
-			close(sFd);
+			close(sFdServer);
 			return (ERROR);
 		}
 		sprintf(workName, "tTcpWork%d", ix++);
@@ -135,7 +138,7 @@ STATUS tcpServer(void) {
 
 VOID tcpServerWorkTask
 	(
-	int 			sFd, 		/* server's socket fd */
+	int 			sFdServer, 		/* server's socket fd */
 	char * 			address, 	/* client's socket address */
 	u_short 		port 		/* client's socket port */
 	) 
@@ -147,30 +150,30 @@ VOID tcpServerWorkTask
 	char clientRequest[256];
 	char replyMsg[256];
 	static char welcomeMsg[] = "Welcome to the TCP Server.\n\r";
-	write(sFd, welcomeMsg, sizeof(welcomeMsg));
+	write(sFdServer, welcomeMsg, sizeof(welcomeMsg));
 	
 	// Set connection to client, show Client ip
 	char addresClient[20];
-	spritnf(addresClient,"Client-IP: %s\n\r",address);
-	write(sft,addresClient);
+	sprintf(addresClient,"Client-IP: %s\n\r",address);
+	write(sFdServer,addresClient,strlen(addresClient));
 	
 	/* read client request, display message */
 	//fioReadString = Funktion wo read aufruft wenn Enter gedrückt wird
 	// while >0, 0 bedeutet Client hat sich abegemeldet         
-	while ((nRead = fioRdString(sFd,  (char *) &clientRequest, sizeof(clientRequest))) > 0) {
+	while ((nRead = fioRdString(sFdServer,  (char *) &clientRequest, sizeof(clientRequest))) > 0) {
 		//printf("in while of TCP\r\n");
 		
 		
 		if (strncmp(clientRequest, "Right",5)==0){				//parse IP
-			sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,"0123456789"));
-			myStateMachine->myTCPClient = new TCP_Client;
+			//sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,"0123456789"));
+			//myStateMachine->myTCPClient = new TCP_Client;
 			
 		}
-		else if (strcmp(clientRequest,"request\r")==0) {//strcmp to compare strings in c
+		else if (strcmp(clientRequest,"REQUEST\r")==0) {//strcmp to compare strings in c
 			myStateMachine->sendEvent("receiveRequest");
 			printf("TCP-Server: request\n\r");
 		}
-		else if (strcmp(clientRequest,"wait\r")==0){			//for debugging only
+		/*else if (strcmp(clientRequest,"wait\r")==0){			//for debugging only
 			myStateMachine->sendEvent("receiveWait");
 			printf("TCP-Server: wait\n\r");
 
@@ -183,41 +186,41 @@ VOID tcpServerWorkTask
 		else if (strcmp(clientRequest,"release\r")==0){			//for debugging only
 			myStateMachine->sendEvent("receiveRelease");
 			printf("TCP-Server: release\n\r");
-		}
+		}*/
 		else{
-			static char errorMsg[] = " Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";
-			write(sFd, errorMsg, strlen(errorMsg));
+			static char errorMsg[] = "TCP-Server: Falsche Eingabe; bitte Eingaben nach Tabelle xy betätigen\n\r";
+			write(sFdServer, errorMsg, strlen(errorMsg));
 		}
 	}
 	if (nRead == ERROR) /* error from read() */
 		perror ("read");
-			close( sFd); /* close server socket connection */
+			close( sFdServer); /* close server socket connection */
 	}
 
-void tcpServerSendReply(int sFd, char * message){
+void tcpServerSendReply(int sFdServer, char * message){
 	char sendBuffer[256];
 	sprintf(sendBuffer,message);
 	
 	//strcmp to compare strings in c
-	if (strcmp(sendBuffer,"Release")==0) {
-		printf("TCP-Server - Send: Release\n\r");
+	if (strcmp(sendBuffer,"RELEASE")==0) {
+		printf("TCP-Server: Send: RELEASE\n\r");
 		static char msg[]= "Release";
-		write(sFd, msg, sizeof(msg));
+		write(sFdServer, msg, sizeof(msg));
 	}
-	else if (strcmp(sendBuffer,"Wait")==0){
-		printf("TCP-Server - Send: Wait\n\r");
-		static char msg[]= "Wait";
-		write(sFd, msg, sizeof(msg));
+	else if (strcmp(sendBuffer,"WAIT")==0){
+		printf("TCP-Server: Send: WAIT\n\r");
+		static char msg[]= "WAIT";
+		write(sFdServer, msg, sizeof(msg));
 
 	}
-	else if (strcmp(sendBuffer,"Ready")==0){
-		printf("TCP-Server - Send: Ready\n\r");
-		static char msg[]= "Ready";
-		write(sFd, msg, sizeof(msg));
+	else if (strcmp(sendBuffer,"READY")==0){
+		printf("TCP-Server: Send: READY\n\r");
+		static char msg[]= "READY";
+		write(sFdServer, msg, sizeof(msg));
 
 	}
 	else{
 		static char errorMsg[] = " Unbekannte Antwort";
-		write(sFd, errorMsg, strlen(errorMsg));
+		write(sFdServer, errorMsg, strlen(errorMsg));
 	}
 }

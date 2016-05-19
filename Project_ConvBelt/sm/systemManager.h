@@ -14,6 +14,7 @@ class SystemManager {
 public:
 	SystemManager();
 	~SystemManager();
+	
 	void action00();
 	void action01();
 	

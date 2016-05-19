@@ -115,8 +115,8 @@ SystemManager :: SystemManager() {
 	myTelnetServer->init();
 	
 	// Create instance of tcp client:
-	//myTCPClient = new TCP_Client;
-	//myTCPClient->init();
+	myTCPClient = new TCP_Client;
+	myTCPClient->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
@@ -221,7 +221,8 @@ void SystemManager :: action22(){	// CM - from runChainProfile to waitForReady
 	sprintf (textBuffer,"State: waitForReady         "); writeToDisplay (13, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Request         "); writeToDisplay (11, 20, textBuffer);
 	
-	myTCPClient->sendMessage("Request");
+	printf("in action22 (runChainProfile to waitForReady) -> send TCPClientMsg\n\r");
+	myTCPClient->sendMessage("REQUEST");
 	return;
 }
 

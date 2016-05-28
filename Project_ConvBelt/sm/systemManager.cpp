@@ -8,6 +8,7 @@
 #include "../communication/Telnet_Server.h"
 #include "../communication/TCP_Client.h"
 
+#include "../controller/controller.h"
 
 extern "C"{
 	#include "../labFiles/hwFunc.h"
@@ -26,6 +27,7 @@ Keyboard * myKeyboard;
 TCP_Server * myTCPServer;
 Telnet_Server * myTelnetServer;
 TCP_Client * myTCPClient;
+Controller * myController;
 
 SystemManager :: SystemManager() {
 	// Initialize table for all diagrams, event time in ms (POSIX)
@@ -117,6 +119,10 @@ SystemManager :: SystemManager() {
 	// Create instance of tcp client:
 	myTCPClient = new TCP_Client;
 	myTCPClient->init();
+	
+	// Create instance of controller:
+	myController = new Controller;
+	myController->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);

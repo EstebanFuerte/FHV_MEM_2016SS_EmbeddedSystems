@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="44" version="2.0">
 <workbenchAdvisor/>
-<window height="1050" maximized="true" width="960" x="0" y="0">
+<window height="1050" maximized="true" width="1342" x="578" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -36,18 +36,28 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="2"/>
 <part id="1"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Client.cpp" partName="TCP_Client.cpp" path="C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Client.cpp" title="TCP_Client.cpp" tooltip="Project_ConvBelt/communication/TCP_Client.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project_ConvBelt/communication/TCP_Client.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="5102" selectionTopPixel="2670"/>
+</editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Server.cpp" partName="TCP_Server.cpp" path="C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Server.cpp" title="TCP_Server.cpp" tooltip="Project_ConvBelt/communication/TCP_Server.cpp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project_ConvBelt/communication/TCP_Server.cpp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6211" selectionTopPixel="2755"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6690" selectionTopPixel="2754"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="systemManager.cpp" partName="systemManager.cpp" path="C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/sm/systemManager.cpp" title="systemManager.cpp" tooltip="Project_ConvBelt/sm/systemManager.cpp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project_ConvBelt/sm/systemManager.cpp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9659" selectionTopPixel="3226"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Client.h" partName="TCP_Client.h" path="C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Client.h" title="TCP_Client.h" tooltip="Project_ConvBelt/communication/TCP_Client.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project_ConvBelt/communication/TCP_Client.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="487" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Server.h" partName="TCP_Server.h" path="C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Server.h" title="TCP_Server.h" tooltip="Project_ConvBelt/communication/TCP_Server.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project_ConvBelt/communication/TCP_Server.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -635,8 +645,8 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.227224" ratioLeft="212" ratioRight="721" relationship="2" relative="left0"/>
-<info folder="true" part="right0" ratio="0.7649007" ratioLeft="462" ratioRight="142" relationship="2" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.18019906" ratioLeft="344" ratioRight="1565" relationship="2" relative="left0"/>
+<info folder="true" part="right0" ratio="0.7827627" ratioLeft="1326" ratioRight="368" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -670,7 +680,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottom" ratio="0.66899765" ratioLeft="574" ratioRight="284" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.69819343" ratioLeft="657" ratioRight="284" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.tm.terminal.view.TerminalView" appearance="2" expanded="2">
 <page content="org.eclipse.tm.terminal.view.TerminalView" label="Terminal 1"/>
 <page content="com.windriver.ide.ui.build.WRBuildConsoleView" label="Build Console"/>
@@ -705,163 +715,162 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Client.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/sm/systemManager.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Client.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Server.cpp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Server.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/sm/systemManager.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/Telnet_Server.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/Telnet_Server.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Server.cpp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/sm/systemManager.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project_ConvBelt/communication/TCP_Server.h"/>
 </editors>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="47" y="15"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="1380" y="7"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
+<item historyLabel="systemManager.cpp" index="1">
+<position info="not_deleted" x="10274" y="1"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5692" y="7"/>
+</item>
+<item historyLabel="systemManager.cpp" index="1">
+<position info="not_deleted" x="10274" y="7"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5692" y="7"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5751" y="0"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="2699" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="2609" y="88"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="2697" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="2636" y="61"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5749" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="2679" y="4"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="3017" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
 <position/>
 </item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="47" y="15"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="6405" y="13"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5071" y="0"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="6405" y="14"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5112" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1252" y="9"/>
+</item>
+<item historyLabel="TCP_Client.h" index="2">
 <position/>
 </item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="67" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1220" y="0"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="Telnet_Server.cpp" index="3">
-<position/>
-</item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="systemManager.cpp" index="2">
-<position info="not_deleted" x="6025" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="0">
-<position info="not_deleted" x="2201" y="15"/>
-</item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="0">
-<position info="not_deleted" x="2201" y="15"/>
-</item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="109" y="352"/>
-</item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="109" y="352"/>
-</item>
-<item historyLabel="systemManager.cpp" index="2">
-<position info="not_deleted" x="6025" y="0"/>
-</item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
-</item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Telnet_Server.cpp" index="3">
-<position info="not_deleted" x="3711" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="4296" y="0"/>
-</item>
-<item historyLabel="Telnet_Server.h" index="4">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="4296" y="0"/>
-</item>
-<item historyLabel="Telnet_Server.cpp" index="3">
-<position info="not_deleted" x="3711" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="4296" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="5">
+<item historyLabel="TCP_Server.h" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5850" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1220" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5874" y="0"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="6460" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="2476" y="3"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1189" y="47"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position/>
+<item historyLabel="TCP_Client.h" index="2">
+<position info="not_deleted" x="487" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5907" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1189" y="47"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position info="not_deleted" x="734" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1252" y="9"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5808" y="18"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="6460" y="0"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position info="not_deleted" x="734" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1252" y="9"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position info="not_deleted" x="682" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5084" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5808" y="18"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5576" y="17"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="878" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5773" y="0"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position info="not_deleted" x="734" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1603" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5799" y="0"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="895" y="18"/>
 </item>
-<item historyLabel="TCP_Server.h" index="1">
-<position info="not_deleted" x="734" y="0"/>
-</item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="5741" y="0"/>
-</item>
-<item historyLabel="systemManager.cpp" index="6">
+<item historyLabel="TCP_Server.h" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="systemManager.cpp" index="6">
-<position info="not_deleted" x="9671" y="0"/>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="895" y="18"/>
 </item>
-<item historyLabel="systemManager.cpp" index="6">
-<position info="not_deleted" x="9674" y="0"/>
+<item historyLabel="TCP_Client.h" index="2">
+<position info="not_deleted" x="487" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="1066" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1603" y="0"/>
 </item>
-<item historyLabel="systemManager.cpp" index="6">
-<position info="not_deleted" x="11825" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="756" y="0"/>
 </item>
-<item historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="6026" y="0"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5481" y="0"/>
 </item>
-<item historyLabel="systemManager.cpp" index="6">
-<position info="not_deleted" x="9659" y="0"/>
+<item historyLabel="TCP_Client.h" index="2">
+<position info="not_deleted" x="487" y="0"/>
 </item>
-<item active="true" historyLabel="TCP_Server.cpp" index="5">
-<position info="not_deleted" x="853" y="11"/>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1252" y="9"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="895" y="18"/>
+</item>
+<item historyLabel="TCP_Server.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="895" y="18"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="1252" y="9"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="788" y="0"/>
+</item>
+<item historyLabel="TCP_Client.cpp" index="0">
+<position info="not_deleted" x="5102" y="9"/>
+</item>
+<item active="true" historyLabel="TCP_Server.cpp" index="3">
+<position info="not_deleted" x="895" y="18"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -869,6 +878,15 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left0"/>
+<trimItem IMemento.internal.id="left1"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="right0"/>
+<trimItem IMemento.internal.id="right1"/>
+<trimItem IMemento.internal.id="right2"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -878,51 +896,52 @@
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="systemManager.cpp" tooltip="Project_ConvBelt/sm/systemManager.cpp">
-<persistable path="/Project_ConvBelt/sm/systemManager.cpp"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Server.h" tooltip="Project_ConvBelt/communication/TCP_Server.h">
 <persistable path="/Project_ConvBelt/communication/TCP_Server.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Server.cpp" tooltip="Project_ConvBelt/communication/TCP_Server.cpp">
-<persistable path="/Project_ConvBelt/communication/TCP_Server.cpp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Telnet_Server.cpp" tooltip="Project_ConvBelt/communication/Telnet_Server.cpp">
-<persistable path="/Project_ConvBelt/communication/Telnet_Server.cpp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Telnet_Server.h" tooltip="Project_ConvBelt/communication/Telnet_Server.h">
-<persistable path="/Project_ConvBelt/communication/Telnet_Server.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stateMachine.h" tooltip="Project_ConvBelt/sm/stateMachine.h">
-<persistable path="/Project_ConvBelt/sm/stateMachine.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="disp.c" tooltip="Project_ConvBelt/labFiles/disp.c">
-<persistable path="/Project_ConvBelt/labFiles/disp.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stateTable.h" tooltip="Project_ConvBelt/sm/stateTable.h">
-<persistable path="/Project_ConvBelt/sm/stateTable.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stateTable.cpp" tooltip="Project_ConvBelt/sm/stateTable.cpp">
-<persistable path="/Project_ConvBelt/sm/stateTable.cpp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="systemManager.cpp" tooltip="Project_ConvBelt/sm/systemManager.cpp">
+<persistable path="/Project_ConvBelt/sm/systemManager.cpp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stateMachine.cpp" tooltip="Project_ConvBelt/sm/stateMachine.cpp">
 <persistable path="/Project_ConvBelt/sm/stateMachine.cpp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" tooltip="Project_ConvBelt/sm/main.cpp">
-<persistable path="/Project_ConvBelt/sm/main.cpp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="myFunctions.h" tooltip="Project_ConvBelt/sm/myFunctions.h">
-<persistable path="/Project_ConvBelt/sm/myFunctions.h"/>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="in.h" tooltip="C:\Windriver\vxworks-6.9\target\h\wrn\coreip\netinet\in.h">
+<persistable path="C:\Windriver\vxworks-6.9\target\h\wrn\coreip\netinet\in.h" project="Project_ConvBelt"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="systemManager.h" tooltip="Project_ConvBelt/sm/systemManager.h">
 <persistable path="/Project_ConvBelt/sm/systemManager.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="systemManager.cpp" tooltip="ConvBelt/sm/systemManager.cpp">
-<persistable path="/ConvBelt/sm/systemManager.cpp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Client.h" tooltip="Project_ConvBelt/communication/TCP_Client.h">
+<persistable path="/Project_ConvBelt/communication/TCP_Client.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="keyboard.cpp" tooltip="Project_ConvBelt/sm/keyboard.cpp">
+<persistable path="/Project_ConvBelt/sm/keyboard.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="kbd.h" tooltip="Project_ConvBelt/labFiles/kbd.h">
+<persistable path="/Project_ConvBelt/labFiles/kbd.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hwFunc.c" tooltip="Project_ConvBelt/labFiles/hwFunc.c">
+<persistable path="/Project_ConvBelt/labFiles/hwFunc.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="kbd.c" tooltip="Project_ConvBelt/labFiles/kbd.c">
+<persistable path="/Project_ConvBelt/labFiles/kbd.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stateMachine.h" tooltip="Project_ConvBelt/sm/stateMachine.h">
+<persistable path="/Project_ConvBelt/sm/stateMachine.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Server.cpp" tooltip="Project_ConvBelt/communication/TCP_Server.cpp">
+<persistable path="/Project_ConvBelt/communication/TCP_Server.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TCP_Client.cpp" tooltip="Project_ConvBelt/communication/TCP_Client.cpp">
+<persistable path="/Project_ConvBelt/communication/TCP_Client.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Telnet_Server.h" tooltip="Project_ConvBelt/communication/Telnet_Server.h">
+<persistable path="/Project_ConvBelt/communication/Telnet_Server.h"/>
 </file>
 </mruList>
 </workbench>

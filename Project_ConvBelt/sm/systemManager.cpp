@@ -6,6 +6,7 @@
 
 #include "../communication/TCP_Server.h"
 #include "../communication/Telnet_Server.h"
+#include "../communication/TCP_Client.h"
 
 
 extern "C"{
@@ -220,7 +221,8 @@ void SystemManager :: action22(){	// CM - from runChainProfile to waitForReady
 	sprintf (textBuffer,"State: waitForReady         "); writeToDisplay (13, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Request         "); writeToDisplay (11, 20, textBuffer);
 	
-	myTCPClient->sendMessage("Request");
+	printf("in action22 (runChainProfile to waitForReady) -> send TCPClientMsg\n\r");
+	myTCPClient->sendMessage("REQUEST");
 	return;
 }
 

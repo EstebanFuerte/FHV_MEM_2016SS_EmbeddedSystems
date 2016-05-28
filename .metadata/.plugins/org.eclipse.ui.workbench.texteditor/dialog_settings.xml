@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="sFd" key="selection"/>
+		<item value="REQUEST" key="selection"/>
 		<list key="findhistory">
+			<item value="REQUEST"/>
+			<item value="Request"/>
+			<item value="Release"/>
+			<item value="Rel"/>
+			<item value="Relaese"/>
+			<item value="message"/>
 			<item value="sFd"/>
-			<item value="SERVER_PORT_NUM"/>
-			<item value="TCP"/>
-			<item value="printf"/>
-			<item value="acc"/>
-			<item value="runSlowMovement2"/>
-			<item value="zeroSp"/>
-			<item value="direction"/>
+			<item value="printf(&quot;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sFdServer"/>
 			<item value="Telnet"/>
 			<item value=")"/>
 		</list>

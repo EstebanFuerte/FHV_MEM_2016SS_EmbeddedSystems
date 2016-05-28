@@ -177,6 +177,10 @@ Project_ConvBelt_partialImage/$(MODE_DIR)/% : LIBPATH =
 Project_ConvBelt_partialImage/$(MODE_DIR)/% : LIBS = 
 Project_ConvBelt_partialImage/$(MODE_DIR)/% : OBJ_DIR := Project_ConvBelt_partialImage/$(MODE_DIR)
 
+Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Client.o : $(PRJ_ROOT_DIR)/communication/TCP_Client.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
+
+
 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Server.o : $(PRJ_ROOT_DIR)/communication/TCP_Server.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
@@ -225,7 +229,8 @@ Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/systemMana
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-OBJECTS_Project_ConvBelt_partialImage = Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Server.o \
+OBJECTS_Project_ConvBelt_partialImage = Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Client.o \
+	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Server.o \
 	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/Telnet_Server.o \
 	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/disp.o \
 	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/hwFunc.o \
@@ -259,10 +264,11 @@ TARGET_JOBS_RULE?=echo "Update the makefile template via File > Import > Build S
 %_jobs : 
 	$(TRACE_FLAG)$(TARGET_JOBS_RULE)
 
-DEP_FILES := Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Server.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/Telnet_Server.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/disp.d \
-	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/hwFunc.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/kbd.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/diaTimer.d \
-	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/keyboard.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/main.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/setMyIP.d \
-	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/stateMachine.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/stateTable.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/systemManager.d
+DEP_FILES := Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Client.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/TCP_Server.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/communication/Telnet_Server.d \
+	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/disp.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/hwFunc.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/labFiles/kbd.d \
+	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/diaTimer.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/keyboard.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/main.d \
+	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/setMyIP.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/stateMachine.d Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/stateTable.d \
+	 Project_ConvBelt_partialImage/$(MODE_DIR)/Objects/Project_ConvBelt/sm/systemManager.d
 -include $(DEP_FILES)
 
 

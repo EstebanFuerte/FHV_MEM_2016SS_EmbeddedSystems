@@ -36,7 +36,7 @@ double Controller :: getRefSpeed(){
 
 double Controller :: getError(){
 	double pulsesPerRound = 64.0;
-	double intervalTime = 1/16.0;
+	//double intervalTime = 1/16.0;
 	int dir = getRotationDirection();
 	
 	// ToDo: Richtungsabhängigkeit bezüglich e = wsoll - wist
@@ -44,7 +44,8 @@ double Controller :: getError(){
 	
 	double pulses = getEncoderPulsesZeroCorrected();
 	double rounds = pulses/pulsesPerRound;
-	double wist = dir*rounds/intervalTime*60.0;			// [U/min]
+	//double wist = dir*rounds/intervalTime*60.0;			// [U/min]
+	double wist = dir*rounds*60.0;			// [U/min]
 	
 	return (this->wsoll - actSpeed);
 }

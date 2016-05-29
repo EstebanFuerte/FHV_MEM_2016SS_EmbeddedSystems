@@ -31,7 +31,7 @@ socket routine calls.
 StateMachine * myStateMachine;
 STATUS tcpClient(char * serverName);
 STATUS send_Request(int sFdClient, char * message);
-int sFdClient;
+int sFdClient=0;
 char ipAdress[20];
 
 
@@ -54,7 +54,7 @@ void TCP_Client :: init(){
 }
 
 void TCP_Client :: sendMessage(char * message){
-	send_Request(sFdClient,message);
+	send_Request(message);
 	return;
 }
 /****************************************************************************
@@ -90,7 +90,7 @@ STATUS tcpClient
 	char replyBuf[REPLY_MSG_SIZE]; /* buffer for reply */
 	char reply; /* if TRUE, expect reply back */
 	int sockAddrSize; /* size of socket address structure */
-	int sFdClient; /* socket file descriptor */
+	//int sFdClient; /* socket file descriptor */
 	int mlen; /* length of message */
 	
 	/* create client's socket */
@@ -184,7 +184,7 @@ STATUS tcpClient
 	return (OK);
 }
 
-STATUS send_Request(int sFdClient,char * message){
+STATUS send_Request(char * message){
 	
 	char sendBuffer[256];
 	sprintf(sendBuffer,message);

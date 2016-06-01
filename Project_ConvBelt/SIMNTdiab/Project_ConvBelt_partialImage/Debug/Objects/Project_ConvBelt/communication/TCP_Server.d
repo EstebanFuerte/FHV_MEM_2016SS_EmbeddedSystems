@@ -179,7 +179,8 @@ Project_ConvBelt_partialImage/Debug/Objects/Project_ConvBelt/communication/TCP_S
   C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo.h \
   C:/Windriver/vxworks-6.9/target/h/wdLib.h \
   C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/../sm/stateTable.h \
-  C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Server.h
+  C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Server.h \
+  C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Client.h
 
 C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h:
 
@@ -540,4 +541,6 @@ C:/Windriver/vxworks-6.9/target/h/wdLib.h:
 C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/../sm/stateTable.h:
 
 C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Server.h:
+
+C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Client.h:
 

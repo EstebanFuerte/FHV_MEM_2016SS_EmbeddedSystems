@@ -36,10 +36,7 @@ void Telnet_Server :: init(){		//Init zum starten des tasks und aufrufen des sta
 /* function declarations */
 VOID TelnetServerWorkTask(int sFd, char * address, u_short port);
 
-STATUS TelnetServer(void) {
-	
-	printf("in TelnetServer\n");
-	
+STATUS TelnetServer(void) {	
 	struct sockaddr_in 	serverAddr; /* server's socket address */
 	struct sockaddr_in 	clientAddr; /* client's socket address */
 	int 				sockAddrSize; /* size of socket address structure */
@@ -95,6 +92,7 @@ STATUS TelnetServer(void) {
 			close(newFd);
 		}
 	}
+	//printf("telnetServer initialized\r\n");
 }
 
 VOID TelnetServerWorkTask

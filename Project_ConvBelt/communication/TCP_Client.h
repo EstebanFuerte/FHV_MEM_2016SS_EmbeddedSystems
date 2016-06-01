@@ -9,7 +9,7 @@ class TCP_Client{
 public:	
 	TCP_Client();
 	~TCP_Client();
-	void init();
+	void init(char ipAdress[20]);
 	void sendMessage(char *message);
 	char ipAdress[20];
 };

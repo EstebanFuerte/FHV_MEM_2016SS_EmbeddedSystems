@@ -16,8 +16,11 @@
 #include "../sm/systemManager.h"
 #include "../sm/stateMachine.h"
 #include "TCP_Server.h"
+#include "TCP_Client.h"
 
 StateMachine * myStateMachine;
+TCP_Client * myTCPClient;
+
 STATUS tcpServer(void);
 void tcpServerSendReply(int sFdServer, char * message);
 int sFdServer;
@@ -63,7 +66,7 @@ VOID tcpServerWorkTask(int sFdServer, char * address, u_short port);
 
 STATUS tcpServer(void) {
 	
-	printf("in tcpServer\n");
+	
 	
 	struct sockaddr_in 	serverAddr; /* server's socket address */
 	struct sockaddr_in 	clientAddr; /* client's socket address */
@@ -123,6 +126,8 @@ STATUS tcpServer(void) {
 			close(newFd);
 		}
 	}
+	
+	//printf("tcpServer initialized\r\n");
 }
 
 /****************************************************************************
@@ -164,9 +169,12 @@ VOID tcpServerWorkTask
 		//printf("in while of TCP\r\n");
 		
 		
-		if (strncmp(clientRequest, "Right",5)==0){				//parse IP
-			//sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,"0123456789"));
-			//myStateMachine->myTCPClient = new TCP_Client;
+		if (strncmp(clientRequest, "RIGHT",5)==0){				//parse IP
+			char TCP_ClientIpAdress[20];
+			sprintf(TCP_ClientIpAdress, strpbrk(clientRequest,".0123456789"));
+			printf("new TCP_CLIENTIPADRESS: %s\n\r", TCP_ClientIpAdress);
+			myTCPClient->init(TCP_ClientIpAdress);
+			
 			
 		}
 		else if (strcmp(clientRequest,"REQUEST\r")==0) {//strcmp to compare strings in c

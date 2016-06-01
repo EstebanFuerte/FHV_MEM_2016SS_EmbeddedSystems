@@ -16,7 +16,7 @@ Controller :: ~Controller(){		// Dekonstruktor zum Speicher freigeben
 }
 
 void Controller :: init(){
-	motorOn();						// default Motor-Staus = Ein; wenn ein 
+	//motorOn();					// default Motor-Staus = Ein; wenn ein 
 									// Stillstand gewünscht ist, dann wird die 
 									// Geschwindigkeit auf 0 geregelt.
 	getEncoderPulsesZeroCorrected();

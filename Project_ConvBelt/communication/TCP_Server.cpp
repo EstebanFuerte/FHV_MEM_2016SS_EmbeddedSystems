@@ -164,8 +164,8 @@ VOID tcpServerWorkTask
 		//printf("in while of TCP\r\n");
 		
 		
-		if (strncmp(clientRequest, "Right",5)==0){				//parse IP
-			//sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,"0123456789"));
+		if (strncmp(clientRequest, "RIGHT",5)==0){				//parse IP
+			//sprintf(myStateMachine->rightServerIP, strpbrk(clientRequest,".0123456789"));
 			//myStateMachine->myTCPClient = new TCP_Client;
 			
 		}

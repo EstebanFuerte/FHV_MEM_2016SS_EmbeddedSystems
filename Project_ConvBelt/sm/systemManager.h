@@ -14,6 +14,7 @@ class SystemManager {
 public:
 	SystemManager();
 	~SystemManager();
+	
 	void action00();
 	void action01();
 	
@@ -56,8 +57,7 @@ public:
 	bool conditionFormerReqFalse();
 	bool conditionTimer();
 	bool conditionTimer2();
-
-
+	
 private:
 	
 };

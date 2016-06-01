@@ -11,4 +11,5 @@ public:
 	~TCP_Client();
 	void init();
 	void sendMessage(char *message);
+	char ipAdress[20];
 };

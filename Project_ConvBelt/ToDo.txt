@@ -1,0 +1,5 @@
+Communication	test:	sending msg to a server
+Controller    	impl:	implemented controller into systemManger
+controller		test:	controller behaviour
+Communication	impl:	automatic ip allocation
+Communication	test:	automatic ip allocation

@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="in tc" key="selection"/>
+		<item value="REQUEST" key="selection"/>
 		<list key="findhistory">
-			<item value="in tc"/>
-			<item value="unknown"/>
-			<item value="unkown"/>
-			<item value="unkonwn"/>
-			<item value="serverName"/>
-			<item value="hostGetByName"/>
-			<item value="myRequest"/>
+			<item value="REQUEST"/>
+			<item value="Request"/>
+			<item value="Release"/>
+			<item value="Rel"/>
+			<item value="Relaese"/>
+			<item value="message"/>
 			<item value="sFd"/>
+			<item value="printf(&quot;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sFdServer"/>
 			<item value="Telnet"/>
 			<item value=")"/>
 		</list>

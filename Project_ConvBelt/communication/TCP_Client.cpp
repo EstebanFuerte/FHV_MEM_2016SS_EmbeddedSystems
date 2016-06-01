@@ -46,8 +46,8 @@ TCP_Client :: ~TCP_Client(){			// Dekonstruktor
 	return;
 }
 
-void TCP_Client :: init(){
-	strcpy(ipAdress,"91.0.0.105");
+void TCP_Client :: init(char ipAdress[20]){
+	//strcpy(ipAdress,"91.0.0.105");
 	taskSpawn("tcpClient",140,0,0x1000, (FUNCPTR) tcpClient,(int)ipAdress,0,0,0,0,0,0,0,0,0);
 	printf("TCP_Client :: init() serverName: %s\n\r",ipAdress);
 	return;

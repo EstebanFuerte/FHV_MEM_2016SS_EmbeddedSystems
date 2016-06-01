@@ -118,11 +118,11 @@ SystemManager :: SystemManager() {
 	
 	// Create instance of tcp client:
 	myTCPClient = new TCP_Client;
-	myTCPClient->init();
+	//myTCPClient->init();
 	
 	// Create instance of controller:
 	myController = new Controller;
-	myController->init();
+	//myController->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
@@ -211,7 +211,7 @@ void SystemManager :: action20(){	// CM - from idleChainMode to slowMovement1
 	sprintf (textBuffer,"State: runSlowMovement1          "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startSlowMovement1");
-	myTCPServer->sendMessage("Ready");
+	myTCPServer->sendMessage("READY");
 	return;
 }
 
@@ -219,7 +219,7 @@ void SystemManager :: action21(){	// CM - from slowMovement1 to runChainProfile
 	sprintf (textBuffer,"State: runChainProfile        "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startChainProfile");
-	myTCPServer->sendMessage("Release");
+	myTCPServer->sendMessage("RELEASE");
 	return;
 }
 
@@ -272,7 +272,7 @@ void SystemManager :: action28(){	// CM - from idleChainMode to idle LocalMode
 void SystemManager :: action29(){	// CM - Answer Requsts during oparation
 	sprintf (textBuffer,"ReceivedMessages = Request       "); writeToDisplay (9, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Wait!!!!!!!!!!!!!!"); writeToDisplay (11, 20, textBuffer);
-	myTCPServer->sendMessage("Wait");
+	myTCPServer->sendMessage("WAIT");
 	formerRequest = true;
 	return;
 }
@@ -384,7 +384,7 @@ void SystemManager :: action41(){
 	myKey = myKeyboard->getPressedKey();
 
 	if (myKey == '5') {
-		printf("Key5IsPressed!\r\n");
+		//printf("Key5IsPressed!\r\n");
 		myStateMachine->sendEvent("keyStartIsPressed");
 	}
 	if (myKey == '1'){
@@ -402,11 +402,11 @@ void SystemManager :: action41(){
 		myStateMachine->sendEvent("keyRightIsPressed");
 	}
 	if (myKey == 'B'){
-		printf("KeyBIsPressed!\r\n");
+		//printf("KeyBIsPressed!\r\n");
 		myStateMachine->sendEvent("keyBIsPressed");
 	}
 	if (myKey == 'A'){
-		printf("KeyAIsPressed!\r\n");
+		//printf("KeyAIsPressed!\r\n");
 		myStateMachine->sendEvent("keyAIsPressed");
 	}
 	

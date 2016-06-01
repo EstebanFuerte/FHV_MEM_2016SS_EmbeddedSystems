@@ -57,8 +57,7 @@ public:
 	bool conditionFormerReqFalse();
 	bool conditionTimer();
 	bool conditionTimer2();
-
-
+	
 private:
 	
 };

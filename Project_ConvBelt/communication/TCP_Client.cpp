@@ -54,7 +54,7 @@ void TCP_Client :: init(){
 }
 
 void TCP_Client :: sendMessage(char * message){
-	send_Request(message);
+	send_Request(sFdClient,message);
 	return;
 }
 /****************************************************************************
@@ -184,7 +184,7 @@ STATUS tcpClient
 	return (OK);
 }
 
-STATUS send_Request(char * message){
+STATUS send_Request(int sFdClient, char * message){
 	
 	char sendBuffer[256];
 	sprintf(sendBuffer,message);

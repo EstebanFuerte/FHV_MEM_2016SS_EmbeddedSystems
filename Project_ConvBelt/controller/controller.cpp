@@ -1,10 +1,10 @@
 #include "controller.h"
 #include "taskLib.h"
-#include "TaskManager.h"
+#include "../sm/SystemManager.h"
 
 extern "C"{
-#include "ert_main.h"
-#include "../labFiles/hwFunc.h"
+	#include "ert_main.h"
+	#include "../labFiles/hwFunc.h"
 }
 
 Controller :: Controller(){			// Konstruktor zum Speicher reservieren
@@ -37,7 +37,7 @@ double Controller :: getRefSpeed(){
 double Controller :: getError(){
 	double pulsesPerRound = 64.0;
 	//double intervalTime = 1/16.0;
-	int dir = getRotationDirection();
+	int dir = getRotationDirection(0);
 	
 	// ToDo: Richtungsabhängigkeit bezüglich e = wsoll - wist
 	// wist kann negativ sein und somit wird es addiert anstatt subtrahiert??
@@ -47,13 +47,13 @@ double Controller :: getError(){
 	//double wist = dir*rounds/intervalTime*60.0;			// [U/min]
 	double wist = dir*rounds*60.0;			// [U/min]
 	
-	return (this->wsoll - actSpeed);
+	return (this->wsoll - wist);
 }
 
 extern "C"
 {
 	double getErrorC(){
-		return mySystemManger->myController->getError();
+		//return myController->getError();
 	}
 }
 

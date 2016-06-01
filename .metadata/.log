@@ -972,3 +972,955 @@ java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata
 	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
 	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2016-05-19 13:50:50.795 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-05-19 13:51:02.206
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-05-19 13:51:16.573
+!MESSAGE Workbench license obtained in 0,25s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide 1 0 2016-05-19 13:51:16.883
+!MESSAGE Workbench start-up time: 22,01s, Main window shown after: 20,97s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:51:28.716
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\wtxregd.exe
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:51:31.241
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:51:32.202
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:13747, PID=5168, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:51:32.228
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 13:56:16.035
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:57:34.545
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:58:19.743
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:58:30.405
+!MESSAGE TM shutdown completed.
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-05-19 13:58:31.723
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-05-19 13:58:31.726
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-05-19 13:58:31.726
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:131)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2016-05-19 13:58:36.393 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-05-19 13:58:40.342
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-05-19 13:58:45.556
+!MESSAGE Workbench license obtained in 0,03s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:58:45.612
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide 1 0 2016-05-19 13:58:45.704
+!MESSAGE Workbench start-up time: 8,27s, Main window shown after: 7,82s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:58:45.828
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:14179, PID=5180, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 13:58:45.860
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 14:00:40.098
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 14:03:45.161
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 14:10:21.088
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 14:15:26.455
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 14:29:08.902
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 14:41:47.122
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 15:26:26.419
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 15:31:34.347
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 15:36:44.971
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.tm.core 4 0 2016-05-19 15:44:11.404
+!MESSAGE Launch step finished with this error: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+
+Launch Context: VxWorks6x_90.0.0.50@U131-06
+Launch Configuration: main - Project_ConvBelt.out - VxWorks6x_90.0.0.50
+Launch Mode: run
+Launch Step: Download Module(s)
+!STACK 0
+com.windriver.tm.core.exceptions.TargetServiceException: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.internalDownload(WRDFWModuleService.java:119)
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.download(WRDFWModuleService.java:87)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.executeDownloadModules(WRVxWorksDownloadModulesStep.java:179)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:143)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:1)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepExecutor.execute(AbstractTargetContextStepExecutor.java:96)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeGroupable(AbstractTargetContextStepper.java:528)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeStepGroup(AbstractTargetContextStepper.java:463)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.internalExecute(AbstractTargetContextStepper.java:405)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.stepper.WRMultiContextLaunchStepper.internalExecute(WRMultiContextLaunchStepper.java:114)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.types.delegates.WRLaunchConfigurationDelegate.launch(WRLaunchConfigurationDelegate.java:168)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.tm.core 4 0 2016-05-19 15:47:47.751
+!MESSAGE Launch step finished with this error: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+
+Launch Context: VxWorks6x_90.0.0.50@U131-06
+Launch Configuration: main - Project_ConvBelt.out - VxWorks6x_90.0.0.50
+Launch Mode: run
+Launch Step: Download Module(s)
+!STACK 0
+com.windriver.tm.core.exceptions.TargetServiceException: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.internalDownload(WRDFWModuleService.java:119)
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.download(WRDFWModuleService.java:87)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.executeDownloadModules(WRVxWorksDownloadModulesStep.java:179)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:143)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:1)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepExecutor.execute(AbstractTargetContextStepExecutor.java:96)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeGroupable(AbstractTargetContextStepper.java:528)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeStepGroup(AbstractTargetContextStepper.java:463)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.internalExecute(AbstractTargetContextStepper.java:405)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.stepper.WRMultiContextLaunchStepper.internalExecute(WRMultiContextLaunchStepper.java:114)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.types.delegates.WRLaunchConfigurationDelegate.launch(WRLaunchConfigurationDelegate.java:168)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 15:47:55.249
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-05-19 15:48:03.028
+!MESSAGE Target Exception: Vector 0xE : Page Fault on VxWorks6x_90.0.0.50 in Kernel Task New Context,id=118 
+at pc=0x42FA93 in strcpy()
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 15:48:28.981
+!MESSAGE TM shutdown completed.
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-05-19 15:48:29.676
+!MESSAGE Target Exception: Vector 0xE : Page Fault on VxWorks6x_90.0.0.50 in Kernel Task tcpClient:0xF8E830 
+at pc=0x42FA93 in strcpy()
+
+!ENTRY com.windriver.ide.launch.core 2 0 2016-05-19 15:48:29.701
+!MESSAGE VxWorks6x_90.0.0.50: Exception in Kernel Task tcpClient:0xF8E830 
+at pc=0x42FA93 in strcpy()
+
+Vector 0xE : Page Fault
+
+Do you want to attach the debugger now?
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 15:48:29.778
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-05-19 15:48:30.679
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-05-19 15:48:30.689
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-05-19 15:48:30.689
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:131)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2016-05-19 15:48:54.614 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-05-19 15:49:02.040
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-05-19 15:49:11.364
+!MESSAGE Workbench license obtained in 0,04s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 15:49:11.840
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide 1 0 2016-05-19 15:49:11.853
+!MESSAGE Workbench start-up time: 15,38s, Main window shown after: 14,36s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 15:49:12.731
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:33073, PID=4120, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 15:49:12.791
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-05-19 15:49:46.588
+!MESSAGE Target Exception: Vector 0xE : Page Fault on VxWorks6x_90.0.0.50 in Kernel Task New Context,id=23 
+at pc=0x42FA93 in strcpy()
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-05-19 15:52:49.212
+!MESSAGE Target Exception: Vector 0xE : Page Fault on VxWorks6x_90.0.0.50 in Kernel Task New Context,id=42 
+at pc=0x42FA93 in strcpy()
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 15:54:10.662
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.target 4 0 2016-05-19 15:57:50.495
+!MESSAGE Object Id does not match ObjectType: expected=KernelTask, actual=POSIX_MessageQ
+!STACK 0
+com.windriver.tm.core.backend.exception.BackendError: Object Id does not match ObjectType: expected=KernelTask, actual=POSIX_MessageQ
+	at com.windriver.ide.target.internal.backend.dfw.WRDebuggerControl$WRDebuggerCommandFinishedListener.debuggerCommandFinished(WRDebuggerControl.java:178)
+	at sun.reflect.GeneratedMethodAccessor13.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at com.windriver.rb.base.Sequent.doInvokeHandler(Sequent.java:948)
+	at com.windriver.rb.base.Sequent.callHandler(Sequent.java:938)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1094)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: com.windriver.rb.gdbmi.InputParser$ResultError: Object Id does not match ObjectType: expected=KernelTask, actual=POSIX_MessageQ
+	at com.windriver.rb.gdbmi.InputParser.readResultRecord(InputParser.java:271)
+	at com.windriver.rb.gdbmi.InputParser.parse(InputParser.java:248)
+	at com.windriver.rb.gdbmi.GDBMIControl$InputThread$2.run(GDBMIControl.java:419)
+	... 8 more
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:00:05.575
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:05:12.757
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:10:21.321
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:24:05.678
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.tm.core 4 0 2016-05-19 16:31:39.774
+!MESSAGE Launch step finished with this error: Target is busy. Try again later
+
+Launch Context: VxWorks6x_90.0.0.50@U131-06
+Launch Configuration: main - Project_ConvBelt.out - VxWorks6x_90.0.0.50
+Launch Mode: run
+Launch Step: Download Module(s)
+!STACK 0
+com.windriver.tm.core.backend.exception.BackendError: Target is busy. Try again later
+	at com.windriver.ide.target.internal.backend.dfw.WRDebuggerControl$WRDebuggerCommandFinishedListener.debuggerCommandFinished(WRDebuggerControl.java:178)
+	at sun.reflect.GeneratedMethodAccessor13.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at com.windriver.rb.base.Sequent.doInvokeHandler(Sequent.java:948)
+	at com.windriver.rb.base.Sequent.callHandler(Sequent.java:938)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1094)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: com.windriver.rb.gdbmi.InputParser$ResultError: Target is busy. Try again later
+	at com.windriver.rb.gdbmi.InputParser.readResultRecord(InputParser.java:271)
+	at com.windriver.rb.gdbmi.InputParser.parse(InputParser.java:248)
+	at com.windriver.rb.gdbmi.GDBMIControl$InputThread$2.run(GDBMIControl.java:419)
+	... 8 more
+
+!ENTRY com.windriver.tm.core 4 0 2016-05-19 16:31:39.822
+!MESSAGE Launch step finished with this error: Target is busy. Try again later
+
+Launch Context: VxWorks6x_90.0.0.50@U131-06
+Launch Configuration: main - Project_ConvBelt.out - VxWorks6x_90.0.0.50
+Launch Mode: run
+Launch Step: Download Module(s)
+!STACK 0
+com.windriver.tm.core.backend.exception.BackendError: Target is busy. Try again later
+	at com.windriver.ide.target.internal.backend.dfw.WRDebuggerControl$WRDebuggerCommandFinishedListener.debuggerCommandFinished(WRDebuggerControl.java:178)
+	at sun.reflect.GeneratedMethodAccessor13.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at com.windriver.rb.base.Sequent.doInvokeHandler(Sequent.java:948)
+	at com.windriver.rb.base.Sequent.callHandler(Sequent.java:938)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1094)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1213)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: com.windriver.rb.gdbmi.InputParser$ResultError: Target is busy. Try again later
+	at com.windriver.rb.gdbmi.InputParser.readResultRecord(InputParser.java:271)
+	at com.windriver.rb.gdbmi.InputParser.parse(InputParser.java:248)
+	at com.windriver.rb.gdbmi.GDBMIControl$InputThread$2.run(GDBMIControl.java:419)
+	... 8 more
+
+!ENTRY com.windriver.tm.core 4 0 2016-05-19 16:31:53.774
+!MESSAGE Launch step finished with this error: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+
+Launch Context: VxWorks6x_90.0.0.50@U131-06
+Launch Configuration: main - Project_ConvBelt.out - VxWorks6x_90.0.0.50
+Launch Mode: run
+Launch Step: Download Module(s)
+!STACK 0
+com.windriver.tm.core.exceptions.TargetServiceException: Error loading '/Project_ConvBelt/SIMNTdiab/Project_ConvBelt/Debug/Project_ConvBelt.out' on 'sys-000': Not connected
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.internalDownload(WRDFWModuleService.java:119)
+	at com.windriver.ide.target.internal.backend.dfw.services.WRDFWModuleService.download(WRDFWModuleService.java:87)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.executeDownloadModules(WRVxWorksDownloadModulesStep.java:179)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:143)
+	at com.windriver.ide.launch.core.stepper.steps.context.dfw.system.tos.vxworks.WRVxWorksDownloadModulesStep.execute(WRVxWorksDownloadModulesStep.java:1)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepExecutor.execute(AbstractTargetContextStepExecutor.java:96)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeGroupable(AbstractTargetContextStepper.java:528)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeStepGroup(AbstractTargetContextStepper.java:463)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.internalExecute(AbstractTargetContextStepper.java:405)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.stepper.WRMultiContextLaunchStepper.internalExecute(WRMultiContextLaunchStepper.java:114)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:332)
+	at com.windriver.ide.launch.core.types.delegates.WRLaunchConfigurationDelegate.launch(WRLaunchConfigurationDelegate.java:168)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 16:31:57.988
+!MESSAGE TM shutdown completed.
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-05-19 16:31:59.134
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-05-19 16:31:59.146
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-05-19 16:31:59.146
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:131)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2016-05-19 16:32:23.424 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-05-19 16:32:29.256
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-05-19 16:32:35.034
+!MESSAGE Workbench license obtained in 0,03s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 16:32:35.102
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide 1 0 2016-05-19 16:32:35.212
+!MESSAGE Workbench start-up time: 9,82s, Main window shown after: 9,33s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 16:32:35.324
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:32706, PID=6072, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 16:32:35.344
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 16:32:56.458
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:37:34.693
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:42:59.531
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:50:12.671
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 16:56:38.445
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:02:34.102
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:09:43.897
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:14:44.527
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:19:55.578
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:25:28.376
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:31:03.917
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:38:58.143
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:48:20.782
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.launch.core 1 0 2016-05-19 17:51:45.448
+!MESSAGE Target Exception: Vector 0x6 : Invalid Opcode on VxWorks6x_90.0.0.50 in Kernel Task tMain 
+at pc=0xF5D5BA in TCP_Client::sendMessage()
+at C:/_stst/FHV_MEM_2016SS_EmbeddedSystems/Project_ConvBelt/communication/TCP_Client.cpp:56
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:53:27.755
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-05-19 17:58:53.743
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.target 1 0 2016-05-19 17:59:35.854
+!MESSAGE TM shutdown completed.
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-05-19 17:59:38.058
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-05-19 17:59:38.061
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-05-19 17:59:38.062
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (The system cannot find the path specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:131)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2016-06-01 07:13:29.965 -----------------------------------------------
+eclipse.buildId=M20130131-0800/WB20141023-0742
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=de_AT
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.ui 1 0 2016-06-01 07:17:20.762
+!MESSAGE The capability VxWorks 5.5.x Development was disabled due to errors in the underlying platform. Once the platform is registered properly to install.properties Workbench support will be reenabled automatically. 
+
+!ENTRY com.windriver.ide.common.core 1 0 2016-06-01 07:17:35.852
+!MESSAGE Workbench license obtained in 0,42s, vendor information: <ln>53555</ln><flt>1</flt><ps>2212-8</ps>
+
+!ENTRY com.windriver.ide 1 0 2016-06-01 07:17:36.348
+!MESSAGE Workbench start-up time: 22,64s, Main window shown after: 21,36s.
+
+!ENTRY com.windriver.ide.target 1 0 2016-06-01 07:17:48.091
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\wtxregd.exe
+
+!ENTRY com.windriver.ide.target 1 0 2016-06-01 07:17:50.705
+!MESSAGE C:\Windriver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb336-sst5281 -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 2 0 2016-06-01 07:17:52.351
+!MESSAGE Race Condition while starting debug server: launched on 127.0.0.1:28320 but Registry-session is at U131-06:28320
+
+!ENTRY com.windriver.ide.target 1 0 2016-06-01 07:17:52.355
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:28320, PID=6300, Session="dfw-wb336-sst5281"
+
+!ENTRY com.windriver.ide.target 1 0 2016-06-01 07:17:52.433
+!MESSAGE Wind River Debug Server API Version '2.17.0' (build name 'DFW_BUILD_3_3_6_4 - 10/09/2014 08:28:10')
+
+!ENTRY org.eclipse.core.resources 4 568 2016-06-01 07:22:34.890
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2016-06-01 07:27:52.034
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.windriver.ide.target 1 0 2016-06-01 07:34:28.946
+!MESSAGE C:\Windriver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_90.0.0.50 -B wdbrpc -V -R C:/_stst -RW -Bt 3 -c C:/Windriver/FTP/vxWorks 90.0.0.50
+
+!ENTRY org.eclipse.core.resources 4 568 2016-06-01 07:34:41.835
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\_stst\FHV_MEM_2016SS_EmbeddedSystems\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:177)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:102)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

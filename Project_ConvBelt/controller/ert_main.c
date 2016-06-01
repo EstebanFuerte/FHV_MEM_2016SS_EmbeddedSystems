@@ -63,7 +63,7 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     Subsystem_step();
 
     /* Get model outputs here */
-	writeAnalog(0,Subsystem_Y.u_ref*220+2660));
+	writeAnalog(0,Subsystem_Y.u_ref*220+2660);
 	//220 digits ~= 1 Volt; 
 	//2660 is approx. the zero speed value
   }

@@ -7,6 +7,11 @@ extern "C"{
 	#include "../labFiles/hwFunc.h"
 }
 
+double error;
+
+SystemManager * mySystemManager;
+
+
 Controller :: Controller(){			// Konstruktor zum Speicher reservieren
 	return;
 }
@@ -16,13 +21,16 @@ Controller :: ~Controller(){		// Dekonstruktor zum Speicher freigeben
 }
 
 void Controller :: init(){
-	//motorOn();					// default Motor-Staus = Ein; wenn ein 
+	motorOn();					// default Motor-Staus = Ein; wenn ein 
 									// Stillstand gewünscht ist, dann wird die 
 									// Geschwindigkeit auf 0 geregelt.
 	getEncoderPulsesZeroCorrected();
+	this->wsoll = 0;
+	printf("wsoll: %f\n\r",this->wsoll);
+		
 	//ert_main task spawnen
 	taskSpawn("ctr",105,0,0x1000, (FUNCPTR) Subsystem_main,110,0,0,0,0,0,0,0,0,0);
-	this->wsoll = 0;
+	
 }
 
 void Controller :: setSpeed(double speed){
@@ -36,24 +44,28 @@ double Controller :: getRefSpeed(){
 
 double Controller :: getError(){
 	double pulsesPerRound = 64.0;
-	//double intervalTime = 1/16.0;
 	int dir = getRotationDirection(0);
 	
 	// ToDo: Richtungsabhängigkeit bezüglich e = wsoll - wist
 	// wist kann negativ sein und somit wird es addiert anstatt subtrahiert??
 	
 	double pulses = getEncoderPulsesZeroCorrected();
-	double rounds = pulses/pulsesPerRound;
-	//double wist = dir*rounds/intervalTime*60.0;			// [U/min]
-	double wist = dir*rounds*60.0;			// [U/min]
+	double rounds = pulses/pulsesPerRound/0.01565;		// [U/sec]		
+	double wist = dir*rounds*60.0;						// [U/min]
+	printf("wi=%f\n\r",wist);
+	printf("ws=%f\n\r",this->wsoll);
+	double error = this->wsoll-wist;
+	printf("e=%.1f\n\r",error);
 	
-	return (this->wsoll - wist);
+	return error;
 }
 
-extern "C"
-{
-	double getErrorC(){
-		//return myController->getError();
-	}
+
+double getErrorC(){
+	double myX;
+	myX = mySystemManager->getError();
+	//printf("f=%.1f\n\r",myX);
+	return myX;
 }
+
 

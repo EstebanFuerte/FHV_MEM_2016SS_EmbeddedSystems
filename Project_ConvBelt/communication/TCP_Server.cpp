@@ -91,7 +91,7 @@ STATUS tcpServer(void) {
 	}
 	
 	//printout Server socket
-	printf("TCP_Server: tcpServer - Socket: %d\r\n", sFdServer);
+	//printf("TCP_Server: tcpServer - Socket: %d\r\n", sFdServer);
 
 	/* bind socket to local address */
 	if (bind(sFdServer, (struct sockaddr *) &serverAddr, sockAddrSize) == ERROR) {
@@ -211,18 +211,18 @@ void tcpServerSendReply(int sFdServer, char * message){
 	
 	//strcmp to compare strings in c
 	if (strcmp(sendBuffer,"RELEASE")==0) {
-		printf("TCP-Server: Send: RELEASE\n\r");
+		//printf("TCP-Server: Send: RELEASE\n\r");
 		static char msg[]= "Release";
 		write(sFdServer, msg, sizeof(msg));
 	}
 	else if (strcmp(sendBuffer,"WAIT")==0){
-		printf("TCP-Server: Send: WAIT\n\r");
+		//printf("TCP-Server: Send: WAIT\n\r");
 		static char msg[]= "WAIT";
 		write(sFdServer, msg, sizeof(msg));
 
 	}
 	else if (strcmp(sendBuffer,"READY")==0){
-		printf("TCP-Server: Send: READY\n\r");
+		//printf("TCP-Server: Send: READY\n\r");
 		static char msg[]= "READY";
 		write(sFdServer, msg, sizeof(msg));
 

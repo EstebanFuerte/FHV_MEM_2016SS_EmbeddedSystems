@@ -32,6 +32,8 @@
 #include <rebootLib.h>
 #include <logLib.h>
 
+//#include "controller.h"
+
 /* this sets the standard stack size for spawned tasks used by the model.
  * this can be changed by compiling with '-DSTACK_SIZE=nnn' where nnn is
  * the stack size desired.
@@ -39,6 +41,8 @@
 #ifndef STACK_SIZE
 #define STACK_SIZE                     16384
 #endif
+
+double getErrorC();
 
 static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
 {
@@ -57,13 +61,22 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     }
 
     /* Set model inputs here */
-	 Subsystem_U.In2 = -getErrorC();		// to call c++ method in controller.c
+	Subsystem_U.In2 = -getErrorC()+7;
+	printf("In2=%.1f\r\n",Subsystem_U.In2);
 
     /* Step the model */
     Subsystem_step();
 
     /* Get model outputs here */
-	writeAnalog(0,Subsystem_Y.u_ref*220+2660);
+    double wsoll = Subsystem_Y.u_ref*220+2660;
+    
+    if(wsoll > 4095){wsoll = 4095;}
+    else if(wsoll<0){ wsoll = 0;}
+    else {wsoll = wsoll;}
+    
+	writeAnalog(0,wsoll);
+    
+	//printf("wsoll=%f\r\n",wsoll);
 	//220 digits ~= 1 Volt; 
 	//2660 is approx. the zero speed value
   }
@@ -84,7 +97,7 @@ int_T Subsystem_main(int_T priority)
   SEM_ID rtClockSem, startStopSem;
   printf("Warning: The simulation will run forever. "
          "To change this behavior select the 'MAT-file logging' option.\n");
-  fflush((NULL));
+  //fflush((NULL));
   if (priority <= 0 || priority > 255-(1)+1) {
     priority = 30;
   }

@@ -9,3 +9,7 @@ class Controller{
 	private:
 		double wsoll;
 };
+extern "C"
+{
+	double getErrorC();
+}

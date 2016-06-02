@@ -122,7 +122,7 @@ SystemManager :: SystemManager() {
 	
 	// Create instance of controller:
 	myController = new Controller;
-	//myController->init();
+	myController->init();
 
 	// Start timer for each diagram which needs one in the first state!
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
@@ -150,6 +150,11 @@ SystemManager :: SystemManager() {
 }
 
 SystemManager :: ~SystemManager() {
+	return;
+}
+
+SystemManager :: getError(){
+	myController->getError();
 	return;
 }
 
@@ -281,7 +286,8 @@ void SystemManager :: action30(){	// Ablauf - from idleFlowControl to accelerate
 	sprintf (textBuffer,"State: accelerateChainProfile           "); writeToDisplay (17, 20, textBuffer);
 	tempSpeed=0;
 	step=90;
-	motorOff();
+	//motorOff();
+	myController->setSpeed(0);
 	direction = false;
 	
 	return;
@@ -292,7 +298,8 @@ void SystemManager :: action31(){	// Ablauf - from idleFlowControl to accelerate
 	
 	tempSpeed = 0;
 	step = speed/20;
-	motorOff();
+	//motorOff();
+	myController->setSpeed(0);
 	return;
 }
 
@@ -300,8 +307,8 @@ void SystemManager :: action32(){	// Ablauf - from idleFlowControl to runSlowMov
 	sprintf (textBuffer,"State: runSlowMovement2          "); writeToDisplay (17, 20, textBuffer);
 	
 	float value = zeroSpeed-100*zeroSpeed/2200;
-	writeAnalog (0, (int)value);
-	motorOn();
+	//writeAnalog (0, (int)value);
+	myController->setSpeed((double) 100);
 	
 	return;
 }
@@ -310,22 +317,25 @@ void SystemManager :: action33(){	// Ablauf - from idleFlowControl to runSlowMov
 	sprintf (textBuffer,"State: runSlowMovement1          "); writeToDisplay (17, 20, textBuffer);
 	
 	float value = zeroSpeed-100*zeroSpeed/2200;
-	writeAnalog (0, (int)value);
-	motorOn();
+	//writeAnalog (0, (int)value);
+	myController->setSpeed((double) 100);
+	//motorOn();
 	
 	return;
 }
 
 void SystemManager :: action34(){	// Ablauf - from runSlowMovement1 to idleFlowControl
 	sprintf (textBuffer,"State: idleFlowControl           "); writeToDisplay (17, 20, textBuffer);
-	motorOff();
+	//motorOff();
+	myController->setSpeed((double) 0);
 	
 	return;
 }
 
 void SystemManager :: action35(){	// Ablauf - from runSlowMovement2 to idleFlowControl
 	sprintf (textBuffer,"State: idleFlowControl           "); writeToDisplay (17, 20, textBuffer);
-	motorOff();
+	//motorOff();
+	myController->setSpeed((double) 0);
 	
 	return;
 }
@@ -337,8 +347,9 @@ void SystemManager :: action36(){	// Ablauf - accelerate to accelerate
 	float value;
 	if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
-	writeAnalog (0, (int)value);
-	motorOn();
+	//writeAnalog (0, (int)value);
+	//motorOn();
+	myController->setSpeed((double) tempSpeed);
 	
 	n++;
 	
@@ -364,8 +375,9 @@ void SystemManager :: action39(){	// Ablauf - from constantVelocity to decelerat
 	float value;
 	if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
-	writeAnalog (0, (int)value);
-	motorOn();
+	//writeAnalog (0, (int)value);
+	//motorOn();
+	myController->setSpeed((double) tempSpeed);
 	
 	n++;
 	

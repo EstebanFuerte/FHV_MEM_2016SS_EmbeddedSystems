@@ -10,10 +10,12 @@
 #include "stateTable.h"
 */
 
+
 class SystemManager {
 public:
 	SystemManager();
 	~SystemManager();
+	getError();
 	
 	void action00();
 	void action01();

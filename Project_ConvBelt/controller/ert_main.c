@@ -61,22 +61,21 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     }
 
     /* Set model inputs here */
-	Subsystem_U.In2 = -getErrorC()+7;
-	printf("In2=%.1f\r\n",Subsystem_U.In2);
+	Subsystem_U.In2 = -getErrorC();
+	//printf("e=%.1f\n",Subsystem_U.In2);
 
     /* Step the model */
     Subsystem_step();
 
     /* Get model outputs here */
-    double wsoll = Subsystem_Y.u_ref*220+2660;
+    double u = Subsystem_Y.u_ref*220+2425;
     
-    if(wsoll > 4095){wsoll = 4095;}
-    else if(wsoll<0){ wsoll = 0;}
-    else {wsoll = wsoll;}
+    if(u > 4095){u = 4095;}
+    else if(u<0){ u = 0;}
+    else {u = u;}
     
-	writeAnalog(0,wsoll);
-    
-	//printf("wsoll=%f\r\n",wsoll);
+    //printf("u=%.1f\n",u);
+	writeAnalog(0,(int)u);
 	//220 digits ~= 1 Volt; 
 	//2660 is approx. the zero speed value
   }

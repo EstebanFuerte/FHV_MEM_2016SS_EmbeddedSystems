@@ -8,6 +8,7 @@ class Controller{
 		double getError();
 	private:
 		double wsoll;
+		double wsoll_old;
 };
 extern "C"
 {

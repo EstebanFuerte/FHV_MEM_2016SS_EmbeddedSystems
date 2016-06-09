@@ -352,11 +352,11 @@ void SystemManager :: action36(){	// Ablauf - accelerate to accelerate
 	//writeAnalog (0, (int)value);
 	//motorOn();
 	
-	tempSpeed = tempSpeed+(float)step;
-	if(direction == true) tempSpeed = (-1)*tempSpeed;
+	
+	if(direction == true) tempSpeed = tempSpeed = (myController->getRefSpeed()+(float)step)*(-1);
+	else tempSpeed = myController->getRefSpeed()+(float)step;
 	
 	//printf("ac36:sp:%.1f\n",tempSpeed);
-	//myController->setSpeed((double) tempSpeed);
 	myController->setSpeed((double)tempSpeed);
 	
 	n++;

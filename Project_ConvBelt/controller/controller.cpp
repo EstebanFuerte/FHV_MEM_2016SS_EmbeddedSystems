@@ -73,16 +73,12 @@ double Controller :: getError(){
 		prevDir = dir;
 	}
 	
-	// ToDo: Richtungsabhängigkeit bezüglich e = wsoll - wist
-	// wist kann negativ sein und somit wird es addiert anstatt subtrahiert??
-	
 	double pulses = getEncoderPulsesZeroCorrected();
 	//printf("pul=%i\n",pulses);
 	
 	double rounds = pulses/pulsesPerRound/0.015625;		// [U/sec]		
 	double wist = dir*rounds*60.0;						// [U/min]
-	//if (wist != 0) 
-		printf("wi=%.1f\n",wist);
+	//if (wist != 0) printf("wi=%.1f\n",wist);
 
 	double error;
 	error= this->wsoll-wist;

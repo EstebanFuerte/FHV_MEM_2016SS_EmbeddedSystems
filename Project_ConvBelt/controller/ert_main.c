@@ -74,7 +74,7 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     else if(u<0){ u = 0;}
     else {u = u;}
     
-    //printf("u=%.1f\n",u);
+    printf("u=%.1f\n",u);
 	writeAnalog(0,(int)u);
 	//220 digits ~= 1 Volt; 
 	//2660 is approx. the zero speed value

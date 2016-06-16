@@ -37,18 +37,18 @@ void Controller :: init(){
 	
 }
 
-void Controller :: setSpeed(double speed){
-	this->wsoll = speed;
-	
-	//double wsoll2 = speed;
-	//printf("wsoll2=%.2f\n",wsoll2);
+void Controller :: setSpeed(double speed, bool direction){
+	if(direction) {
+		this->wsoll = speed*(-1.0);
+		//printf("direction==true");
+	}
+	else this->wsoll = speed;
 	
 	//print only if wsoll new value
+	/*
 	if (this->wsoll != this->wsoll_old){
 		printf("----ws:%.1f\n",this->wsoll);
-	//	printf("speed:%.1f\n", speed);
-	//	this->wsoll_old = this->wsoll;
-	}
+	}*/
 	
 	return;
 }

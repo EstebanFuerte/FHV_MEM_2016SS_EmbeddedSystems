@@ -7882,4 +7882,18 @@ DFW status and trace log : Thu Jun 16 13:34:59 2016
   SevError(2) : targetcomponent.cpp : 2837
 15:08:13.454 ERROR: Target not connected
   SevError(2) : targetcomponent.cpp : 2837
-15:08:13.455 ERROR: no
+15:08:13.455 ERROR: no id specified
+  SevError(2) : programcontext.cpp : 5665
+15:08:22.226 ERROR: Socket Error. API: recv, SessionId: 800, ReturnCode:  [SystemErrorCode=10054]: SocketHandler::Read
+  Protocol Component : SevError(2) : sockethandler.cpp : 102
+15:08:22.252 ERROR: Socket Error. API: recv, SessionId: 800, ReturnCode:  [SystemErrorCode=10054]
+  Protocol Component : SevError(2) : sockethandler.cpp : 102
+15:08:22.252 ERROR: target definition defaultTarget has not been created
+  Protocol Component : SevError(2) : targetdefinitionmanager.cpp : 5161
+15:08:22.252 ERROR: target definition VxWorks6x_90.0.0.50 has not been created
+  Protocol Component : SevError(2) : targetdefinitionmanager.cpp : 5161
+15:08:22.273 Operation succeeded: ShutdownServer
+  Reason: ERRNone  Severity: ERRSuccessful15:08:22.273 ERROR: target definition defaultTarget has not been created
+  Protocol Component : SevError(2) : targetdefinitionmanager.cpp : 5161
+15:08:22.273 ERROR: target definition VxWorks6x_90.0.0.50 has not been created
+  Protocol Component : SevError(2) : targetdefinitionmanager.cpp : 5161

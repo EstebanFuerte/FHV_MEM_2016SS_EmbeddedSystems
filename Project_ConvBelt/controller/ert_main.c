@@ -62,7 +62,8 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
 
     /* Set model inputs here */
 	Subsystem_U.In2 = -getErrorC();
-	if(Subsystem_U.In2 != 0) printf("e=%.1f\n",Subsystem_U.In2);
+	//if(Subsystem_U.In2 != 0) 
+	printf("e=%.1f\n",Subsystem_U.In2);
 
     /* Step the model */
     Subsystem_step();
@@ -70,6 +71,7 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     /* Get model outputs here */
     double u = Subsystem_Y.u_ref*220+2425;
     
+    // Limitation of the output
     if(u > 4095){u = 4095;}
     else if(u<0){ u = 0;}
     else {u = u;}

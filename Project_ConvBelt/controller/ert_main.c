@@ -55,14 +55,14 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     }
 
     if (semTake(sem,NO_WAIT) != ERROR) {
-      logMsg("Rate for SingleRate task too fast.\n",0,0,0,0,0,0);
+      logMsg("Rttf.\n",0,0,0,0,0,0);
     } else {
       semTake(sem, WAIT_FOREVER);
     }
 
     /* Set model inputs here */
 	Subsystem_U.In2 = -getErrorC();
-	//printf("e=%.1f\n",Subsystem_U.In2);
+	if(Subsystem_U.In2 != 0) printf("e=%.1f\n",Subsystem_U.In2);
 
     /* Step the model */
     Subsystem_step();
@@ -74,7 +74,7 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     else if(u<0){ u = 0;}
     else {u = u;}
     
-    printf("u=%.1f\n",u);
+    //printf("u=%.1f\n",u);
 	writeAnalog(0,(int)u);
 	//220 digits ~= 1 Volt; 
 	//2660 is approx. the zero speed value

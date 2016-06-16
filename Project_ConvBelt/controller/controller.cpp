@@ -45,7 +45,7 @@ void Controller :: setSpeed(double speed){
 	
 	//print only if wsoll new value
 	if (this->wsoll != this->wsoll_old){
-		printf("ws:%.1f\n",this->wsoll);
+		printf("----ws:%.1f\n",this->wsoll);
 	//	printf("speed:%.1f\n", speed);
 	//	this->wsoll_old = this->wsoll;
 	}
@@ -76,7 +76,7 @@ double Controller :: getError(){
 	double pulses = getEncoderPulsesZeroCorrected();
 	//printf("pul=%i\n",pulses);
 	
-	double rounds = pulses/pulsesPerRound/0.015625;		// [U/sec]		
+	double rounds = pulses;		// [U/sec]		
 	double wist = dir*rounds*60.0;						// [U/min]
 	//if (wist != 0) printf("wi=%.1f\n",wist);
 

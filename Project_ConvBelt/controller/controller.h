@@ -3,7 +3,7 @@ class Controller{
 		Controller();
 		~Controller();
 		void init();
-		void setSpeed(double);
+		void setSpeed(double, bool);
 		double getRefSpeed();
 		double getError();
 	private:

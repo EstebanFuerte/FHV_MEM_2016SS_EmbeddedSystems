@@ -37,18 +37,18 @@ void Controller :: init(){
 	
 }
 
-void Controller :: setSpeed(double speed){
-	this->wsoll = speed;
-	
-	//double wsoll2 = speed;
-	//printf("wsoll2=%.2f\n",wsoll2);
+void Controller :: setSpeed(double speed, bool direction){
+	if(direction) {
+		this->wsoll = speed*(-1.0);
+		//printf("direction==true");
+	}
+	else this->wsoll = speed;
 	
 	//print only if wsoll new value
+	/*
 	if (this->wsoll != this->wsoll_old){
-		printf("ws:%.1f\n",this->wsoll);
-	//	printf("speed:%.1f\n", speed);
-	//	this->wsoll_old = this->wsoll;
-	}
+		printf("----ws:%.1f\n",this->wsoll);
+	}*/
 	
 	return;
 }
@@ -73,16 +73,12 @@ double Controller :: getError(){
 		prevDir = dir;
 	}
 	
-	// ToDo: Richtungsabhängigkeit bezüglich e = wsoll - wist
-	// wist kann negativ sein und somit wird es addiert anstatt subtrahiert??
-	
 	double pulses = getEncoderPulsesZeroCorrected();
 	//printf("pul=%i\n",pulses);
 	
-	double rounds = pulses/pulsesPerRound/0.015625;		// [U/sec]		
+	double rounds = pulses;		// [U/sec]		
 	double wist = dir*rounds*60.0;						// [U/min]
-	//if (wist != 0) 
-		printf("wi=%.1f\n",wist);
+	//if (wist != 0) printf("wi=%.1f\n",wist);
 
 	double error;
 	error= this->wsoll-wist;

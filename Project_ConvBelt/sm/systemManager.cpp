@@ -268,11 +268,13 @@ void SystemManager :: action26(){	// CM - checkFormerRequest to slowMovement1
 void SystemManager :: action27(){	// CM - checkFormerRequest to idleChainMode
 	sprintf (textBuffer,"State: idleChainMode                     "); writeToDisplay (13, 20, textBuffer);
 	formerRequest = false;
+	myController->setSpeed(0,true);
 	return;
 }
 
 void SystemManager :: action28(){	// CM - from idleChainMode to idle LocalMode
 	sprintf (textBuffer,"State: idleLocalMode                 "); writeToDisplay (13, 20, textBuffer);
+	myController->setSpeed(0,true);
 	return;
 }
 
@@ -288,8 +290,7 @@ void SystemManager :: action30(){	// Ablauf - from idleFlowControl to accelerate
 	sprintf (textBuffer,"State: accelerateChainProfile           "); writeToDisplay (17, 20, textBuffer);
 	tempSpeed=0;
 	step=90;
-	//motorOff();
-	myController->setSpeed(0);
+	myController->setSpeed(0,true);
 	direction = false;
 	
 	return;
@@ -300,8 +301,7 @@ void SystemManager :: action31(){	// Ablauf - from idleFlowControl to accelerate
 	
 	tempSpeed = 0;
 	step = speed/20;
-	//motorOff();
-	myController->setSpeed(0);
+	myController->setSpeed(0,true);
 	return;
 }
 
@@ -310,7 +310,7 @@ void SystemManager :: action32(){	// Ablauf - from idleFlowControl to runSlowMov
 	
 	//float value = zeroSpeed-100*zeroSpeed/2200;
 	//writeAnalog (0, (int)value);
-	myController->setSpeed((double) 100);
+	myController->setSpeed((double) 100,direction);
 	
 	return;
 }
@@ -320,7 +320,7 @@ void SystemManager :: action33(){	// Ablauf - from idleFlowControl to runSlowMov
 	
 	//float value = zeroSpeed-100*zeroSpeed/2200;
 	//writeAnalog (0, (int)value);
-	myController->setSpeed((double) 100);
+	myController->setSpeed((double) 100,direction);
 	//motorOn();
 	
 	return;
@@ -329,7 +329,7 @@ void SystemManager :: action33(){	// Ablauf - from idleFlowControl to runSlowMov
 void SystemManager :: action34(){	// Ablauf - from runSlowMovement1 to idleFlowControl
 	sprintf (textBuffer,"State: idleFlowControl           "); writeToDisplay (17, 20, textBuffer);
 	//motorOff();
-	myController->setSpeed((double) 0);
+	myController->setSpeed((double) 0,direction);
 	
 	return;
 }
@@ -337,7 +337,7 @@ void SystemManager :: action34(){	// Ablauf - from runSlowMovement1 to idleFlowC
 void SystemManager :: action35(){	// Ablauf - from runSlowMovement2 to idleFlowControl
 	sprintf (textBuffer,"State: idleFlowControl           "); writeToDisplay (17, 20, textBuffer);
 	//motorOff();
-	myController->setSpeed((double) 0);
+	myController->setSpeed((double) 0,direction);
 	
 	return;
 }
@@ -345,19 +345,24 @@ void SystemManager :: action35(){	// Ablauf - from runSlowMovement2 to idleFlowC
 void SystemManager :: action36(){	// Ablauf - accelerate to accelerate
 	sprintf (textBuffer,"State: accelerate      "); writeToDisplay (17, 20, textBuffer);
 	
-	//tempSpeed = tempSpeed+(float)step;
+	tempSpeed = tempSpeed+(float)step;
+	
+	//printf("ac36:sp:%.1f\n",tempSpeed);
+	myController-> setSpeed((double)tempSpeed, direction);
+		
+	/*tempSpeed = tempSpeed+(float)step;
 	//float value;
 	//if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	//else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
 	//writeAnalog (0, (int)value);
 	//motorOn();
 	
-	tempSpeed = tempSpeed+(float)step;
-	if(direction == true) tempSpeed = (-1)*tempSpeed;
 	
-	//printf("ac36:sp:%.1f\n",tempSpeed);
-	//myController->setSpeed((double) tempSpeed);
-	myController->setSpeed((double)tempSpeed);
+	
+	//if(direction == true) tempSpeed = (myController->getRefSpeed()+(float)step)*(-1);
+	//else tempSpeed = myController->getRefSpeed()+(float)step;
+	
+	//printf("ac36:sp:%.1f\n",tempSpeed);*/
 	
 	n++;
 	
@@ -379,7 +384,16 @@ void SystemManager :: action38(){	// Ablauf - from constantVelocity to decelerat
 void SystemManager :: action39(){	// Ablauf - from constantVelocity to decelerate
 	sprintf (textBuffer,"State: decelerate          "); writeToDisplay (17, 20, textBuffer);
 	
-	//tempSpeed = tempSpeed-(float)step;
+	tempSpeed = tempSpeed-(float)step;
+	
+	/*
+	tempSpeed = tempSpeed-(float)step;
+	if(direction) (-1)*tempSpeed;*/
+	
+	//printf("ac39:sp:%.1f\n",tempSpeed);
+	myController-> setSpeed((double)tempSpeed, direction);
+	
+	/*tempSpeed = tempSpeed-(float)step;
 	//float value;
 	//if(direction == false) value=zeroSpeed-tempSpeed*zeroSpeed/2200;
 	//else value = zeroSpeed+tempSpeed*zeroSpeed/2200;
@@ -391,7 +405,7 @@ void SystemManager :: action39(){	// Ablauf - from constantVelocity to decelerat
 	if(direction == true) tempSpeed = (-1)*tempSpeed;
 	//printf("ac39:sp:%.1f\n",tempSpeed);
 	myController->setSpeed((double) tempSpeed);
-	
+	*/
 	n++;
 	
 	return;
@@ -399,7 +413,8 @@ void SystemManager :: action39(){	// Ablauf - from constantVelocity to decelerat
 
 void SystemManager :: action40(){	// Ablauf - from decelerate to idleFlowControl
 	sprintf (textBuffer,"State: idleFlowControl          "); writeToDisplay (17, 20, textBuffer);
-	motorOff();
+	//motorOff();
+	myController->setSpeed(0,direction);
 	n=0;
 	return;
 }
@@ -441,18 +456,18 @@ void SystemManager :: action41(){
 	if (myKey == '8')	myStateMachine->sendEvent("receiveReady");
 	if (myKey == '9')	myStateMachine->sendEvent("receiveRelease");
 	if (myKey == 'F'){
-		printf("stepresponse 1000 - right\n");
-		myController->setSpeed((double) 1000);
+		printf("stepresponse 500rpm - right = 500\n");
+		myController->setSpeed((double) 500,true);
 		
 	}
 	if (myKey == 'E'){
-			printf("stepresponse 1000rpm - left\n");
-			myController->setSpeed((double) -1000);
+			printf("stepresponse 500rpm - left = -500\n");
+			myController->setSpeed((double) -500,direction);
 			
 	}
 	if (myKey == 'D'){
 			printf("setMotor to Zero");
-			myController->setSpeed((double) 0);
+			myController->setSpeed((double) 0,direction);
 			
 	}
 	

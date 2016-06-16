@@ -2173,3 +2173,4 @@
 15:08:13.489:2: c:	352-wrs-echo *** TM log: end disconnect VxWorks6x_90.0.0.50 status: Status OK: unknown code=0 OK null
 15:08:13.489:2: r:	352^done,echo="*** TM log: end disconnect VxWorks6x_90.0.0.50 status: Status OK: unknown code=0 OK null"
 15:08:13.489:2: r:	(gdb)
+# 15:08:22.252:2: Closing session 2d37518

@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=sst5281
-useridperkey=U131-06.vxsim1_smp\=sst5281;U131-06.Local\=sst5281;U131-06.VxWorks6x_90.0.0.50\=sst5281;U131-06.vxsim0\=sst5281;
+useridperkey=U131-06.vxsim1_smp_0\=sst5281;U131-06.vxsim1_smp\=sst5281;U131-06.VxWorks6x_90.0.0.50\=sst5281;U131-06.Local\=sst5281;U131-06.vxsim0\=sst5281;

@@ -209,6 +209,7 @@ void SystemManager :: action15(){	// LM - from runLocalProfile to idleLocalMode
 
 void SystemManager :: action16(){	// LM - from idleLocalMode to idleChainMode
 	sprintf (textBuffer,"State: idleChainMode                 "); writeToDisplay (13, 20, textBuffer);
+
 	return;
 }
 
@@ -218,7 +219,7 @@ void SystemManager :: action20(){	// CM - from idleChainMode to slowMovement1
 	sprintf (textBuffer,"State: runSlowMovement1          "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startSlowMovement1");
-	myTCPServer->sendMessage("READY");
+	myTCPServer->sendMessage("Ready\r\n");
 	return;
 }
 
@@ -226,7 +227,7 @@ void SystemManager :: action21(){	// CM - from slowMovement1 to runChainProfile
 	sprintf (textBuffer,"State: runChainProfile        "); writeToDisplay (13, 20, textBuffer);
 	
 	myStateMachine->sendEvent("startChainProfile");
-	myTCPServer->sendMessage("RELEASE");
+	myTCPServer->sendMessage("Release\r\n");
 	return;
 }
 
@@ -234,8 +235,8 @@ void SystemManager :: action22(){	// CM - from runChainProfile to waitForReady
 	sprintf (textBuffer,"State: waitForReady         "); writeToDisplay (13, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Request         "); writeToDisplay (11, 20, textBuffer);
 	
-	printf("in action22 (runChainProfile to waitForReady) -> send TCPClientMsg\n\r");
-	myTCPClient->sendMessage("REQUEST");
+	//printf("in action22 (runChainProfile to waitForReady) -> send TCPClientMsg\n\r");
+	myTCPClient->sendMessage("Request\r\n");
 	return;
 }
 
@@ -254,6 +255,7 @@ void SystemManager :: action24(){	// CM -from WaitForReady to slowMovement2
 void SystemManager :: action25(){	// CM - from slowMovement2 to checkFormerRequest
 	sprintf (textBuffer,"ReceivedMessages = Release    "); writeToDisplay (9, 20, textBuffer);
 	sprintf (textBuffer,"State: checkFormerRequest                     "); writeToDisplay (13, 20, textBuffer);
+
 	myStateMachine->sendEvent("stop");
 	return;
 }
@@ -267,6 +269,7 @@ void SystemManager :: action26(){	// CM - checkFormerRequest to slowMovement1
 
 void SystemManager :: action27(){	// CM - checkFormerRequest to idleChainMode
 	sprintf (textBuffer,"State: idleChainMode                     "); writeToDisplay (13, 20, textBuffer);
+	printf("Ready4Package------------------------\n\r");
 	formerRequest = false;
 	myController->setSpeed(0,true);
 	return;
@@ -281,7 +284,7 @@ void SystemManager :: action28(){	// CM - from idleChainMode to idle LocalMode
 void SystemManager :: action29(){	// CM - Answer Requsts during oparation
 	sprintf (textBuffer,"ReceivedMessages = Request       "); writeToDisplay (9, 20, textBuffer);
 	sprintf (textBuffer,"SentMessages = Wait!!!!!!!!!!!!!!"); writeToDisplay (11, 20, textBuffer);
-	myTCPServer->sendMessage("WAIT");
+	myTCPServer->sendMessage("Wait\r\n");
 	formerRequest = true;
 	return;
 }
@@ -456,13 +459,13 @@ void SystemManager :: action41(){
 	if (myKey == '8')	myStateMachine->sendEvent("receiveReady");
 	if (myKey == '9')	myStateMachine->sendEvent("receiveRelease");
 	if (myKey == 'F'){
-		printf("stepresponse 500rpm - right = 500\n");
-		myController->setSpeed((double) 500,true);
+		printf("stepresponse 1000rpm - right = 1000\n");
+		myController->setSpeed((double) 1000,true);
 		
 	}
 	if (myKey == 'E'){
-			printf("stepresponse 500rpm - left = -500\n");
-			myController->setSpeed((double) -500,direction);
+			printf("stepresponse 1000rpm - left = -1000\n");
+			myController->setSpeed((double) -1000,direction);
 			
 	}
 	if (myKey == 'D'){

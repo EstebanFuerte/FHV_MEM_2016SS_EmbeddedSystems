@@ -63,7 +63,7 @@ static int_T tBaseRate(SEM_ID sem, SEM_ID startStopSem)
     /* Set model inputs here */
 	Subsystem_U.In2 = -getErrorC();
 	//if(Subsystem_U.In2 != 0) 
-	printf("e=%.1f\n",Subsystem_U.In2);
+	//printf("e=%.1f\n",Subsystem_U.In2);
 
     /* Step the model */
     Subsystem_step();

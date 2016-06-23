@@ -162,18 +162,18 @@ STATUS tcpClient
 		return (ERROR);
 	}
 	else {*/
-		//printf("TCP_Client: im read -> rplyBuf !=0: %s\n\r",replyBuf);
+		printf("TCP_Client: im read -> rplyBuf !=0: %s\n\r",replyBuf);
 		
-		if(strcmp(replyBuf,"RELEASE\r")==0)
+		if(strcmp(replyBuf,"Release\r")==0)
 		{
 			//printf("TCP-Client; receiveRelease; %d\r\n",sFdClient);
 			myStateMachine->sendEvent("receiveRelease");
 		}
-		else if(strcmp(replyBuf,"WAIT\r")==0){
+		else if(strcmp(replyBuf,"Wait\r")==0){
 			//printf("TCP-Client: Wait; %d\r\n",sFdClient);
 			myStateMachine->sendEvent("receiveWait");
 		}
-		else if (strcmp(replyBuf,"READY\r")==0){
+		else if (strcmp(replyBuf,"Ready\r")==0){
 			//printf("TCP-Client: Ready; %d\r\n",sFdClient);
 			myStateMachine->sendEvent("receiveReady");
 		}

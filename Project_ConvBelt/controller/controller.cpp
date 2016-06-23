@@ -78,7 +78,7 @@ double Controller :: getError(){
 	
 	double rounds = pulses;		// [U/sec]		
 	double wist = dir*rounds*60.0;						// [U/min]
-	//if (wist != 0) printf("wi=%.1f\n",wist);
+	if (wist != 0) printf("wi=%.1f\n",wist);
 
 	double error;
 	error= this->wsoll-wist;
